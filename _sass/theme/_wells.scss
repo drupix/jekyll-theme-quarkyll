@@ -1,0 +1,19 @@
+.well {
+  min-height: 20px;
+  padding: 0.9rem;
+  margin-bottom: 20px;
+  background-color: #f6f6f6;
+  border: 1px solid #ededed;
+  box-shadow: none;
+  border-radius: 0px;
+
+  &.well-large {
+    padding: 1.5rem;
+    border-radius: 0px;
+  }
+  
+  &.well-small {
+    border-radius: 0px;
+    padding: 0.45rem;
+  }
+}

@@ -1,0 +1,92 @@
+---
+title: Heroes
+layout: page
+classes: title-center-title-h1h2
+menus:
+  help:
+    title: Heroes
+    weight: 6
+    identifier: heroes
+---
+
+<div class="title-center title-h1h2">
+    <h1>Heroes</h1>
+</div>
+
+### Empty states aka Hero unit
+
+<div class="docs-note">
+	<p>Empty states/blank slates are commonly used as placeholders for first time use, empty data and error screens.</p>
+</div>
+
+<div class="container">
+	<div class="empty">
+		<div class="empty-icon">
+			<i class="icon icon-3x icon-mail"></i>
+		</div>
+
+		<p class="empty-title h1">Hero unit</p>
+
+		<p class="empty-subtitle">Hello! I'm a hero unit and my goal is to get everyone's attention.</p>
+
+		<div class="empty-action">
+			<button class="btn btn-primary">Learn more</button>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="empty">
+		<div class="empty-icon">
+			<i class="icon icon-3x icon-mail"></i>
+		</div>
+
+		<p class="empty-title h5">You have no new messages</p>
+
+		<p class="empty-subtitle">Click the button to start a conversation</p>
+
+		<div class="empty-action">
+			<button class="btn btn-primary">Send a message</button>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="columns">
+		<div class="column col-6 col-md-12">
+			<div class="empty">
+				<div class="empty-icon">
+					<i class="icon icon-3x icon-mail"></i>
+				</div>
+
+				<p class="empty-title h5">You've successfully signed up</p>
+
+				<p class="empty-subtitle">Click the button to invite your friends</p>
+
+				<div class="empty-action">
+					<button class="btn btn-primary">Invite your friends</button>
+				</div>
+
+				<div class="empty-action">
+					<button class="btn btn-link">Skip</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="column col-6 col-md-12">
+			<div class="empty">
+				<div class="empty-icon">
+					<i class="icon icon-3x icon-people"></i>
+				</div>
+
+				<p class="empty-title h5">You are not following anyone</p>
+
+				<p class="empty-subtitle">Start to meet new friends</p>
+
+				<div class="empty-action input-group input-inline">
+					<input class="form-input" placeholder="" type="text" /><button class="btn btn-primary input-group-btn">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+
+# Collections
+collections:
+  help_pages:
+    output: true
+    label: help_page
+    permalink: /help-pages/:path/

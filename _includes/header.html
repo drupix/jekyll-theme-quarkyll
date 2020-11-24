@@ -1,0 +1,27 @@
+<section id="header" class="section">
+  <section class="container grid-lg">
+    <nav class="navbar">
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      <section class="navbar-section logo">
+        <a href="{{ "/" | relative_url }}" class="navbar-brand mr-10" rel="author">
+          <img class="logo" src="/assets/images/logo-jekyll.png" alt="Quarkyll Logo">
+        </a>
+      </section>
+      <section class="navbar-section">
+        <nav class="dropmenu animated">
+          {%- assign menu = site.menus.header -%}
+          {%- include menus.html -%}
+        </nav>
+      </section>
+    </nav>
+  </section>
+</section>
+
+<div class="mobile-menu">
+  <div class="button_container" id="toggle">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+blockquote {
+  border-left: $border-width-lg solid;
+  border-color: $primary-color;
+  
+  &.pull-right {
+    border-left: 0;
+    border-right: $border-width-lg solid;
+    border-color: $primary-color;
+    text-align: right;
+  }
+
+}

@@ -1,0 +1,23 @@
+// Button variant mixin
+@mixin theme-button-variant($color: $light-color, $bgcolor: $primary-color) {
+  background: $bgcolor;
+  border-color: darken($bgcolor, 3%);
+  color: $color;
+
+  &:focus,
+  &:hover {
+    background: darken($bgcolor, 4%);
+    border-color: darken($bgcolor, 5%);
+    color: $color;
+  }
+  &:active,
+  &.active {
+    background: darken($bgcolor, 7%);
+    border-color: darken($bgcolor, 10%);
+    color: $color;
+  }
+}
+
+@mixin qds-icons-awesome-base($padding: $icons-awesome-horiz-padding) {
+  padding-right: $padding;
+}

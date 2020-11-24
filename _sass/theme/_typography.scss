@@ -1,0 +1,20 @@
+/* Dropcaps */
+.dropcap {
+  //color: #555555;
+  display: block;
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  padding: 0;
+  margin: 0 8px 0 0;
+  text-transform: uppercase;
+}
+
+// Icon Tweaks
+i.la {
+  &.la-heart, &.la-heart-o {
+    &.pulse {
+      color: #920
+    }
+  }
+}

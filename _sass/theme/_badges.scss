@@ -1,0 +1,63 @@
+.badge {
+  // Badge colors
+  
+  &.badge-success {
+    &[data-badge],
+    &:not([data-badge]) {
+      &::after {
+        background: $success-color;
+        color: $light-color;
+      }
+    }
+  }
+  
+  &.badge-warning {
+    &[data-badge],
+    &:not([data-badge]) {
+      &::after {
+        background: $warning-color;
+        color: $light-color;
+      }
+    }
+  }
+  
+  &.badge-error {
+    &[data-badge],
+    &:not([data-badge]) {
+      &::after {
+        background: $error-color;
+        color: $light-color;
+      }
+    }
+  }
+  
+  &.badge-important {
+    &[data-badge],
+    &:not([data-badge]) {
+      &::after {
+        background: $important-color;
+        color: $light-color;
+      }
+    }
+  }
+  
+  &.badge-info {
+    &[data-badge],
+    &:not([data-badge]) {
+      &::after {
+        background: $info-color;
+        color: $light-color;
+      }
+    }
+  }
+  
+  &.badge-inverse {
+    &[data-badge],
+    &:not([data-badge]) {
+      &::after {
+        background: $inverse-color;
+        color: $light-color;
+      }
+    }
+  }
+}

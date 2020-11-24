@@ -1,0 +1,24 @@
+email:
+  id: 'enzo@drupal-solutions.ch'
+  href: 'mailto:'
+  title: 'Say Hello!'
+  icon: 'la la-envelope'
+
+# facebook:
+#   id: 'your-facebook-username'
+#   href: 'https://www.facebook.com/'
+#   title: 'Facebook'
+#   icon: 'fa-facebook-square'
+
+# twitter:
+#   id: 'your-twitter-name'
+#   href: 'https://www.twitter.com/'
+#   title: 'Twitter'
+#   icon: 'fa-twitter-square'
+
+github:
+  id: 'drupix'
+  href: 'https://github.com/'
+  title: 'GitHub'
+  icon: 'lab la-github'
+

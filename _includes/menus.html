@@ -1,0 +1,19 @@
+{% if menu %}
+  <ul>
+  {% for item in menu %}
+    {% if item.hide-in-nav != true %}
+      <li>
+        {% assign menu_link = item.url %}
+        {% if item.children %}
+          {% assign menu_link = '#' %}
+        {% endif %}
+        <a class="page-link" href="{{ menu_link }}" title="{{ item.title }}">{{ item.title }}</a>
+        {% if item.children %}
+          {% assign menu = item.children %}
+          {% include menus.html %}
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endif %}

@@ -1,0 +1,158 @@
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+     -moz-transition: opacity 0.15s linear;
+       -o-transition: opacity 0.15s linear;
+          transition: opacity 0.15s linear;
+  
+  &.in {
+    opacity: 1;
+  }
+}
+
+.tab-content {
+  overflow: auto;
+  padding: 12px 0 0 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below {
+  > .tab {
+    border-bottom: none;
+    border-top: 0.05rem solid #e7e9ed;
+  }
+  .tab-item {
+    &.active a,
+    a.active {
+      border-bottom: none;
+      border-top: 0.1rem solid $primary-color;
+    }
+  }
+  
+  .tab-content {
+    padding: 0 0 12px 0;
+  }
+}
+
+.tabs-left > .tab,
+.tabs-right > .tab {
+  border-bottom: none;
+  display: block;
+  
+  > .tab-item {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  > li {
+    > a {
+      min-width: 74px;
+      margin-right: 0;
+      margin-bottom: 3px;
+    }
+    &:first-child > a {
+      padding-top: 0;
+    }
+  }
+  
+}
+
+.tabs-left {
+  > .tab {
+    float: left;
+    
+    > li > a {
+      padding-left: 0;
+    }
+  }
+
+  .tab-content {
+    border-left: 0.05rem solid #e7e9ed;
+    padding: 0 0 0 12px;
+  }
+
+}
+
+.tabs-right {
+  > .tab {
+    float: right;
+    
+    > li > a {
+      padding-right: 0;
+    }
+  }
+  
+  .tab-content {
+    border-right: 0.05rem solid #e7e9ed;
+    padding: 0 12px 0 0;
+  }  
+}
+
+
+/*************************************/
+/****** Admin local tasks menu *******/
+/*************************************/
+
+.tab.local-tasks  {
+  border-bottom: 1px solid $primary-color;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 25px !important;
+
+  .tab-item {
+    float: none !important;
+    display: inline-block !important;
+    
+    a {
+      background-color: #e7e9ed;
+      //color: inherit;
+      
+      -webkit-border-radius: 6px 6px 0 0;
+         -moz-border-radius: 6px 6px 0 0;
+              border-radius: 6px 6px 0 0;
+
+      padding: 5px 16px !important;
+      margin: 0 2px;
+      
+      &.active,
+      &.is-active,
+      &:hover,
+      &:focus {
+        background-color: #3085ee;
+        color: #fff;
+      }
+    }
+    
+    .active,
+  	.is-active {
+      a,
+      a:hover,
+      a:focus {
+        background-color: #3085ee;
+        color: #fff;;
+      }
+    }
+    
+    &:first-child a {
+        margin-left: 0; 
+    }
+    &:last-child a {
+      margin-right: 0; 
+    }
+  }
+}
+

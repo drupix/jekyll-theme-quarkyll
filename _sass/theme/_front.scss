@@ -1,0 +1,51 @@
+
+.front #body-wrapper {
+    text-align: center;
+
+    > .container {
+      padding: 0;
+    }
+
+    &.offset-box {
+      .frame-box {
+        margin: -3rem (-1rem - $layout-spacing) 3rem;
+        padding: 1rem 1rem;
+        background: $light-color;
+        box-shadow: 0 0 75px 0 rgba($dark-color, 0.1);
+      }
+    }
+
+    .frame-box {
+      padding: 3rem 0;
+
+      > p, p {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  /*
+  // Slideshow
+  .showcase-slideshow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    right: 0;
+    //z-index: -1;
+
+    padding-left: -1rem;
+
+    li {
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+  */

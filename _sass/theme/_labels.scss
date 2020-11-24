@@ -1,0 +1,18 @@
+// See also in blog.scss
+.label {
+  // Label colors
+  font-weight: bold;
+
+  &.label-important {
+    @include label-variant($light-color, $important-color);
+  }
+
+  &.label-info {
+    @include label-variant($light-color, $info-color);
+  }
+
+  &.label-inverse {
+    @include label-variant($light-color, $inverse-color);
+  }
+
+}

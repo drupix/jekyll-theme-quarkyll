@@ -1,0 +1,11 @@
+.dropmenu {
+  ul {
+    li {
+      a {
+        &:before {
+          font-family: 'Line Awesome Free';
+        }
+      }
+    }
+  }
+}
