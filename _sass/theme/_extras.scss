@@ -1,6 +1,13 @@
 /***************************************************/
 /* Elements not normalized in base Quark or Spectre
 /***************************************************/
+
+a {
+  &:visited {
+    color: $link-color;
+  }
+}
+
 label {
 	display: block;
   // font-weight: bold;

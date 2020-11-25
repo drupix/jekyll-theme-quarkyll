@@ -1,0 +1,5 @@
+#pre_footer {
+  &.bg-dark {
+    background: lighten(#000000, 20%) !important;
+  }
+}

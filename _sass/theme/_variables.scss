@@ -1,5 +1,15 @@
-// // Spectre Overrides
-// $border-color: lighten($primary-color, 65%) !default;
+//
+// Spectre Overrides
+//
+
+// Gray colors
+// $dark-color: #303742 !default;
+
+$border-color: lighten($primary-color, 65%) !default;
+
+//
+// End Spectre Overrides
+//
 
 // Control colors
 $important-color: #b94a48 !default;
