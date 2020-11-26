@@ -6,8 +6,6 @@ Welcome to Quarkyll, a new Jekyll theme! In this directory, you'll find the file
 
 To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
 
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your Jekyll site's `Gemfile`:
@@ -24,11 +22,11 @@ theme: jekyll-theme-quarkyll
 
 And then execute:
 
-$ bundle
+    $ bundle
 
 Or install it yourself as:
 
-$ gem install jekyll-theme-quarkyll
+    $ gem install jekyll-theme-quarkyll
 
 ## Usage
 
