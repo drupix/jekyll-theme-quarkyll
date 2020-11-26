@@ -1,10 +1,9 @@
+//
+// See quark/_onepage.scss
+//
+.front .home-content {
 
-.front #body-wrapper {
     text-align: center;
-
-    > .container {
-      padding: 0;
-    }
 
     &.offset-box {
       .frame-box {
@@ -24,6 +23,7 @@
         margin-right: auto;
       }
     }
+
   }
 
   /*

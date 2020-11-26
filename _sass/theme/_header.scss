@@ -1,6 +1,25 @@
 #header {
   background: $header-color-dark;
 
+  .navbar-section {
+    &.main-menu {
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+  }
+
+  .navbar-brand {
+    .site-title {
+      display: block;
+      font-size: 1.2rem;
+    }
+    .slogan {
+      display: block;
+      font-size: 0.7rem;
+    }
+  }
+
   a {
     color: rgba($light-color, 0.7) !important;
   }
@@ -8,22 +27,22 @@
     color: $dark-color !important;
   }
 
-  .logo {
-    svg, img {
-      // width: 150px;
-      height: 64px;
-    }
-  }
+  // .logo {
+  //   svg, img {
+  //     // width: 150px;
+  //     height: 56px;
+  //   }
+  // }
 }
 
 // Animate Fixed Header
-body.header-fixed.header-animated {
-  #header.scrolled {
-    .logo {
-      svg, img {
-        // width: 100px;
-        height: 42px;
-      }
-    }
-  }
-}
+// body.header-fixed.header-animated {
+//   #header.scrolled {
+//     .logo {
+//       svg, img {
+//         // width: 100px;
+//         height: 34px;
+//       }
+//     }
+//   }
+// }
