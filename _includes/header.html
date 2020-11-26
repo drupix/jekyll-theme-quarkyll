@@ -6,19 +6,12 @@
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       <section class="navbar-section logo">
-        <a href="{{ "/" | relative_url }}" class="navbar-brand mr-10" rel="author">
-          {%- if site.logo -%}
-          <img class="logo" src="{{ logo_path | relative_url }}" alt="">
-          <!-- <img class="logo" src="/assets/images/logo-jekyll.png" alt="Quarkyll Logo"> -->
-          {%- else -%}
-            <span class="site-title">{{ site.title | default "Quarkyll" }}</span>
-            {% if site.slogan %}<span class="slogan">{{ site.slogan }}</span>{% endif %}
-          {%- endif -%}
-        </a>
+        {%- include logo.html -%}
       </section>
       <section class="navbar-section main-menu">
         <nav class="dropmenu animated">
           {%- assign menu = site.menus.header -%}
+          {%- assign menu_class = 'main-menu' -%}
           {%- include menus.html -%}
         </nav>
       </section>

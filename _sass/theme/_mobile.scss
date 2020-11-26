@@ -1,0 +1,14 @@
+.treemenu {
+  li {
+    background: inherit; //rgba($gray-color-dark,0.1);
+    a {
+      color: #fff;
+      &:hover, &:focus, &.active {
+        color: $primary-color-light !important;
+      }
+    }
+  }
+  .toggler {
+    color: #fff;
+  }
+}

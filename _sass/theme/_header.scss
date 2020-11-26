@@ -22,9 +22,26 @@
 
   a {
     color: rgba($light-color, 0.7) !important;
+    &:hover, &:focus, &.active {
+      color: $primary-color-light !important;
+    }
   }
+
   .dropmenu ul ul a {
     color: $dark-color !important;
+  }
+
+  .header-dark &:not(.scrolled) {
+    a {
+      &:hover, &:focus, &.active {
+        color: $primary-color-light !important;
+      }
+    }
+    .dropmenu ul ul a {
+      &:hover, &:focus, &.active {
+        color: $primary-color-light !important;
+      }
+    }
   }
 
   // .logo {

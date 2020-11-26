@@ -1,16 +1,22 @@
+{% comment %}
+  Do not assign menu here as it is called recursively
+{% endcomment %}
 {%- if menu -%}
-  <ul>
+  <ul class="{{ menu_class }} {% if tree %}tree{% endif %}">
   {%- for item in menu -%}
     {%- if item.hide-in-nav != true -%}
-      <li>
+      <li class="menu-item">
         {%- assign menu_link = item.url -%}
         {%- if item.children -%}
           {%- assign menu_link = '#' -%}
         {%- endif -%}
-        <a class="page-link" href="{{ menu_link }}" title="{{ item.title }}">{{ item.title }}</a>
+        <a class="{% if item.url == page.url %}active{% endif %}"
+          href="{{ menu_link }}"
+          title="{{ item.title }}">{{ item.title }}</a>
         {%- if item.children -%}
           {%- assign menu = item.children -%}
-          {%- include menus.html -%}
+          {%- assign menu_class = 'sub-menu' -%}
+          {%- include menus.html level=level -%}
         {%- endif -%}
       </li>
     {%- endif -%}
