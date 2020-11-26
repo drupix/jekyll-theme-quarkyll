@@ -10,5 +10,8 @@ a {
 
 label {
 	display: block;
-  // font-weight: bold;
+
+  &.accordion-header {
+    font-weight: bold;
+  }
 }
