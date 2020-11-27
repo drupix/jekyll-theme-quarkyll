@@ -4,17 +4,17 @@ email:
   title: 'Say Hello!'
   icon: 'la la-envelope'
 
-# facebook:
-#   id: 'your-facebook-username'
-#   href: 'https://www.facebook.com/'
-#   title: 'Facebook'
-#   icon: 'fa-facebook-square'
+facebook:
+  id: 'your-facebook-username'
+  href: 'https://www.facebook.com/'
+  title: 'Facebook'
+  icon: 'lab la-facebook'
 
-# twitter:
-#   id: 'your-twitter-name'
-#   href: 'https://www.twitter.com/'
-#   title: 'Twitter'
-#   icon: 'fa-twitter-square'
+twitter:
+  id: 'your-twitter-name'
+  href: 'https://www.twitter.com/'
+  title: 'Twitter'
+  icon: 'lab la-twitter'
 
 github:
   id: 'drupix'
