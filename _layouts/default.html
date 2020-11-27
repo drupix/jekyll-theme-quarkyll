@@ -5,7 +5,7 @@
   Free for personal and commercial use under the MIT license
   https://github.com/drupix/jekyll-theme-quarkyll/blob/master/LICENSE.txt
 -->
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.locale | slice: 0,2 | default: "en" }}">
 <head>
     {%- include head.html -%}
 </head>

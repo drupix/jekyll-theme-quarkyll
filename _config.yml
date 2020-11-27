@@ -11,15 +11,28 @@
 # https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/#installing-the-theme
 
 
-# Theme options: header-fixed header-animated header-dark sticky-footer footer-dark
+# Available Theme options:
+    # header-fixed        : When enabled, the header will be fixed at the top of the browser
+    # header-animated     : When enabled, the header will animate to a smaller header when scrolling
+    # header-dark         : When enabled, a dark-friendly style will be used
+    # header-transparent  : When enabled, a transparent style will be used
+    # sticky-footer       : When enabled, the footer will be sticky at the bottom of the browser
+    # footer-dark         : When enabled, a dark-friendly style will be used
+# For easier integration add options in one string. Options are added in the body class
 theme_options: "header-fixed header-animated header-dark sticky-footer footer-dark"
 
 # Grid size: grid-sm, grid-md grid-lg
-grid-size : grid-lg
-title     : "Quarkyll Theme"
-slogan    : "A simple Jekyll Theme"
-logo      : "/assets/images/logo-quarkyll.png" # path of logo image to display in the header, e.g. "/assets/images/logo.png"
-favicon   : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
+grid-size       : grid-lg
+
+# Other config
+# encoding        : "utf-8"
+locale          : "fr-CH"
+title           : "Quarkyll Theme"
+title_separator : "-"
+slogan          : "A simple Jekyll Theme"
+description     : "An amazing website."
+logo            : "/assets/images/logo-quarkyll.png" # path of logo image to display in the header, e.g. "/assets/images/logo.png"
+favicon         : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
 
 # SEO Related
 # google_site_verification :
