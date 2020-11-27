@@ -1,3 +1,4 @@
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
 <a href="{{ "/" | relative_url }}" class="navbar-brand mr-10" rel="author">
   {%- if site.logo -%}
     <img class="logo" src="{{ logo_path | relative_url }}" alt="{{ site.title }}">

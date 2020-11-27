@@ -18,7 +18,8 @@ theme_options: "header-fixed header-animated header-dark sticky-footer footer-da
 grid-size : grid-lg
 title     : "Quarkyll Theme"
 slogan    : "A simple Jekyll Theme"
-logo      : "/assets/images/logo-quarkyll.png" # path of logo image to display in the masthead, e.g. "/assets/images/logo.png"
+logo      : "/assets/images/logo-quarkyll.png" # path of logo image to display in the header, e.g. "/assets/images/logo.png"
+favicon   : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
 
 # SEO Related
 # google_site_verification :
