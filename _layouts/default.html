@@ -9,54 +9,50 @@
 <head>
     {%- include head.html -%}
 </head>
-<body id="top" class="{{ page.classes | default: "" }} {{ site.theme_options | join: " " }}">
+<body id="top" class="{{ page.classes | default: "" }} {% if page.showcase %}showcase{% endif %} {{ site.theme_options | join: " " }}">
     <div id="page-wrapper">
-
         {%- include header.html -%}
-
-        {%- if page.layout == 'home' -%}
+        {%- if page.showcase -%}
             {%- include showcase.html -%}
-            {% comment %} {%- include hero.html -%} {% endcomment %}
         {%- endif -%}
-
         <section id="start">
-            <!-- Not used !!! TODO Remove it ! -->
-            <!-- <div id="highlights"></div> -->
-            {%- if page.layout == 'home' -%}
+            {%- if page.showcase -%}
                 <section class="section home-content offset-box">
                     <section class="container {{ site.grid-size | default: "grid-lg" }}">
                         <div class="frame-box">
                             {{ content }}
-                            {%- include features.html -%}
-                        </div><!-- .frame-box -->
-                    </section><!-- #container -->
-                </section><!-- #body-wrapper -->
+                            {%- if page.layout == 'home' -%}
+                                {%- include features.html -%}
+                            {%- endif -%}
+                        </div>
+                    </section>
+                </section>
             {%- else -%}
                 <section id="body-wrapper" class="section offset-box">
                     <section class="container {{ site.grid-size | default: "grid-lg" }}">
                         <div class="frame-box">
                             {{ content }}
-                        </div><!-- .frame-box -->
-                    </section><!-- #container -->
-                </section><!-- #body-wrapper -->
+                        </div>
+                    </section>
+                </section>
             {%- endif -%}
-        </section><!-- #start -->
+        </section>
+    </div>
 
-    </div><!-- #page-wrapper -->
-    {%- include pre-footer.html -%}
-    {%- include footer.html -%}
+    {% include pre-footer.html %}
+    {% include footer.html %}
 
     <div class="mobile-container">
         <div class="overlay" id="overlay">
             <div class="mobile-logo">
                 {%- assign mobile = true -%}
-                {%- include logo.html -%}
+                {% include logo.html %}
             </div>
             <nav class="overlay-menu">
                 {%- assign menu = site.menus.header -%}
                 {%- assign menu_class = 'main-menu' -%}
                 {%- assign tree = true -%}
-                {%- include menus.html -%}
+                {% include menus.html %}
             </nav>
         </div>
     </div>
