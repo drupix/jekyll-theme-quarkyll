@@ -27,10 +27,8 @@ menus:
 
 <span class="dropcap">Q</span>**uark theme** is the new default theme for Grav built with **Spectre.css** a lightweight, responsive and modern CSS framework. Spectre provides  basic styles for typography, elements, and a responsive layout system that utilizes best practices and consistent language design.
 
-You can find the source code for Quark at GitHub:
-[Quark](https://github.com/getgrav/grav-theme-quark)
+You can find the source code for Quark at GitHub: [Quark](https://github.com/getgrav/grav-theme-quark){:rel="noreferrer"}
 
-You can find the source code for Spectre at GitHub:
-[Spectre.css](https://picturepan2.github.io/spectre/)
+You can find the source code for Spectre at GitHub: [Spectre.css](https://picturepan2.github.io/spectre/){:rel="noreferrer"}
 
-[jekyll-organization]: https://github.com/jekyll
+Official Jekyll website: [jekyll-organization](https://github.com/jekyll){:rel="noreferrer"}

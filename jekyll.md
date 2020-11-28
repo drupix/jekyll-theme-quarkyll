@@ -27,9 +27,9 @@ menus:
     hide-in-nav: false
 ---
 
-[Quark documentation](https://github.com/getgrav/grav-theme-quark#quark-theme) - Official Quark documentation
+[Quark documentation](https://github.com/getgrav/grav-theme-quark#quark-theme){:rel="noreferrer"} - Official Quark documentation
 
-[Quark default options](https://github.com/getgrav/grav-theme-quark#default-options) - In Quark documentation
+[Quark default options](https://github.com/getgrav/grav-theme-quark#default-options){:rel="noreferrer"} - In Quark documentation
 
 ## Stuff around Jekyll
 
@@ -37,46 +37,46 @@ menus:
 
 #### Docs
 
-[Jekyll variables](https://jekyllrb.com/docs/variables)
+[Jekyll variables](https://jekyllrb.com/docs/variables){:rel="noreferrer"}
 
-[Jekyll collections](https://jekyllrb.com/docs/collections)
+[Jekyll collections](https://jekyllrb.com/docs/collections){:rel="noreferrer"}
 
-[Creating a gem-based theme: custom theme](https://jekyllrb.com/docs/themes/#creating-a-gem-based-theme)
+[Creating a gem-based theme: custom theme](https://jekyllrb.com/docs/themes/#creating-a-gem-based-theme){:rel="noreferrer"}
 
 #### Plugins
 
-[Plugins installations](https://jekyllrb.com/docs/plugins/installation)
+[Plugins installations](https://jekyllrb.com/docs/plugins/installation){:rel="noreferrer"}
 
-[Dashboard Plugin](https://github.com/jekyll/dashboard) - A dashboard for at-a-glance knowledge of the health of the Jekyll ecosystem
+[Dashboard Plugin](https://github.com/jekyll/dashboard){:rel="noreferrer"} - A dashboard for at-a-glance knowledge of the health of the Jekyll ecosystem
 
 #### Themes
 
-[Minima, Jekyll default theme](https://github.com/jekyll/minima/)
+[Minima, Jekyll default theme](https://github.com/jekyll/minima/){:rel="noreferrer"}
 
-[Minimal Mistake, a theme with Skins (color variations)](https://github.com/mmistakes/minimal-mistakes)
+[Minimal Mistake, a theme with Skins (color variations)](https://github.com/mmistakes/minimal-mistakes){:rel="noreferrer"}
 
-[Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts) - How to manage excerpts **(used for meta description)**
+[Post excerpts](https://jekyllrb.com/docs/posts/#post-excerpts){:rel="noreferrer"} - How to manage excerpts **(used for meta description)**
 
 ### Elsewhere on the web
 
 #### Gem Based Themes
 
-[Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/) - Jekyll Template for Project Websites
+[Jekyll Doc Theme](https://aksakalli.github.io/jekyll-doc-theme/){:rel="noreferrer"} - Jekyll Template for Project Websites
 
-[Creating Gem Based Themes For Jekyll](https://www.chrisanthropic.com/blog/2016/creating-gem-based-themes-for-jekyll/) - How I Built Starving Artist Jekyll Theme
+[Creating Gem Based Themes For Jekyll](https://www.chrisanthropic.com/blog/2016/creating-gem-based-themes-for-jekyll/){:rel="noreferrer"} - How I Built Starving Artist Jekyll Theme
 
 #### Liquid
 
-[Liquid documentation](https://shopify.github.io/liquid/) - Safe, customer-facing template language for flexible web apps
+[Liquid documentation](https://shopify.github.io/liquid/){:rel="noreferrer"} - Safe, customer-facing template language for flexible web apps
 
 #### CloudCannon
 
-[Jekyll Cheat Sheet](https://learn.cloudcannon.com/) - Learn Jekyll & CloudCannon
+[Jekyll Cheat Sheet](https://learn.cloudcannon.com/){:rel="noreferrer"} - Learn Jekyll & CloudCannon
 
 #### Tips & Markdown by digitaldrummerj.me
 
-[Jekyll Tips](https://digitaldrummerj.me/categories/jekyll/), [Adding Styling To Html Output](https://digitaldrummerj.me/styling-jekyll-markdown/) - by Justin James
+[Jekyll Tips](https://digitaldrummerj.me/categories/jekyll/){:rel="noreferrer"}, [Adding Styling To Html Output](https://digitaldrummerj.me/styling-jekyll-markdown/){:rel="noreferrer"} - by Justin James
 
 #### JekyllConf
 
-[JekyllConf](https://jekyllconf.com/) - The free, online global conference for all things Jekyll
+[JekyllConf](https://jekyllconf.com/){:rel="noreferrer"} - The free, online global conference for all things Jekyll
