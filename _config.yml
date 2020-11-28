@@ -40,7 +40,7 @@ favicon         : # path of favicon image to display in browser tab, e.g. "/asse
   #
   # Note that both logo and logo_light are otionals but if you want to display a logo
   # you must define the logo variable
-logo       : "/assets/images/logo-quarkyll.png"       # path of logo image to display in the header, e.g. "/assets/images/logo.png"
+logo       : "/assets/images/logo-quarkyll-light.png"       # path of logo image to display in the header, e.g. "/assets/images/logo.png"
 logo_light : "/assets/images/logo-quarkyll-light.png" # path of alternate logo image to display in the header, e.g. "/assets/images/logo.png"
 
 

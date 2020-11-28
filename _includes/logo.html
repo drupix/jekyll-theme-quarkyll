@@ -1,4 +1,5 @@
 <!--{% capture logo_path %}{{ site.logo }}{% endcapture %}-->
+{%- comment -%}
 {% if mobile %}
   {% if site.logo_light %}
     {% capture logo_path %}{{ site.logo_light }}{% endcapture %}
@@ -21,6 +22,16 @@
       {% capture logo_path %}{{ site.logo }}{% endcapture %}
       <img class="logo-alt" src="{{ logo_path | relative_url }}" alt="{{ site.title }}">
     {%- endif -%}
+  {%- else -%}
+    <span class="site-title">{{ site.title | default "Quarkyll" }}</span>
+    {% if site.slogan %}<span class="slogan">{{ site.slogan }}</span>{% endif %}
+  {%- endif -%}
+</a>
+{%- endcomment -%}
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
+<a href="{{ "/" | relative_url }}" class="navbar-brand mr-10" rel="author">
+  {%- if site.logo -%}
+    <img class="logo" src="{{ logo_path | relative_url }}" alt="{{ site.title }}">
   {%- else -%}
     <span class="site-title">{{ site.title | default "Quarkyll" }}</span>
     {% if site.slogan %}<span class="slogan">{{ site.slogan }}</span>{% endif %}

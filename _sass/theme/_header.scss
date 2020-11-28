@@ -39,17 +39,17 @@
 
   .logo {
     .logo-alt {
-      display: none;
+      // display: none;
     }
   }
 
   .header-dark.header-transparent &:not(.scrolled) {
     .logo {
       .logo {
-        display: none;
+        // display: none;
       }
       .logo-alt {
-        display: block;
+        // display: block;
       }
     }
     a {
