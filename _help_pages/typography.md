@@ -21,6 +21,10 @@ Details on the full capabilities of Spectre.css can be found in the [Official Sp
 {% endnotices %}
 {% endcomment %}
 
+<div class="notices">
+<p>Details on the full capabilities of Spectre.css can be found in the <a rel="noreferrer" href="https://picturepan2.github.io/spectre/elements.html">Official Spectre Documentation</a></p>
+</div>
+
 ### Headings
 
 # H1 Heading `40px`
@@ -133,7 +137,7 @@ The notices styles are actually provided by the `Quarkyll` plugin (module ??) bu
 
 {% comment %}
 {% notices %}
-This is a warning notification without parameter
+This is a warning notification without color parameter
 {% endnotices %}
 
 {% notices :color => 'yellow' %}
@@ -152,3 +156,19 @@ This is a default notification
 This is a success notification
 {% endnotices %}
 {% endcomment %}
+
+<div class="notices">
+<p>This is a default notification</p>
+</div>
+
+<div class="notices success">
+<p>This is a success notification</p>
+</div>
+
+<div class="notices warning">
+<p>This is a warning notification</p>
+</div>
+
+<div class="notices error">
+<p>This is an error notification</p>
+</div>
