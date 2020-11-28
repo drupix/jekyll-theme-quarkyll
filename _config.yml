@@ -11,15 +11,15 @@
 # https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/#installing-the-theme
 
 
-# Available Theme options:
-    # header-fixed        : When enabled, the header will be fixed at the top of the browser
-    # header-animated     : When enabled, the header will animate to a smaller header when scrolling
-    # header-dark         : When enabled, a dark-friendly style will be used
-    # header-transparent  : When enabled, a transparent style will be used
-    # sticky-footer       : When enabled, the footer will be sticky at the bottom of the browser
-    # footer-dark         : When enabled, a dark-friendly style will be used
-# For easier integration add options in one string. Options are added in the body class
-theme_options: "header-fixed header-animated header-dark sticky-footer footer-dark"
+# Theme options: (added as body class)
+theme_options: [
+  header-fixed,        # When enabled, the header will be fixed at the top of the browser
+  header-animated,     # When enabled, the header will animate to a smaller header when scrolling
+  header-dark,         # When enabled, a dark-friendly style will be used
+  header-transparent,  # When enabled, a transparent style will be used
+  sticky-footer,       # When enabled, the footer will be sticky at the bottom of the browser
+  footer-dark,         # When enabled, a dark-friendly style will be used
+]
 
 # Grid size: grid-sm, grid-md grid-lg
 grid-size       : grid-lg
@@ -31,8 +31,18 @@ title           : "Quarkyll Theme"
 title_separator : "-"
 slogan          : "A simple Jekyll Theme"
 description     : "An amazing website."
-logo            : "/assets/images/logo-quarkyll.png" # path of logo image to display in the header, e.g. "/assets/images/logo.png"
 favicon         : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
+# Logo functionality:
+  # If logo_light is defined, logo will automatically switch between
+  # logo and logo_light depending on theme_options[header-dark] and/or
+  # theme_options[header-transparent] if defined.
+  # This allow for example to automatically switch between the logo and her lighter version
+  #
+  # Note that both logo and logo_light are otionals but if you want to display a logo
+  # you must define the logo variable
+logo       : "/assets/images/logo-quarkyll.png"       # path of logo image to display in the header, e.g. "/assets/images/logo.png"
+logo_light : "/assets/images/logo-quarkyll-light.png" # path of alternate logo image to display in the header, e.g. "/assets/images/logo.png"
+
 
 # SEO Related
 # google_site_verification :

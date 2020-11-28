@@ -9,7 +9,7 @@
 <head>
     {%- include head.html -%}
 </head>
-<body id="top" class="{{ page.classes | default: "" }} {{ site.theme_options }}">
+<body id="top" class="{{ page.classes | default: "" }} {{ site.theme_options | join: " " }}">
     <div id="page-wrapper">
 
         {%- include header.html -%}
@@ -49,6 +49,7 @@
     <div class="mobile-container">
         <div class="overlay" id="overlay">
             <div class="mobile-logo">
+                {%- assign mobile = true -%}
                 {%- include logo.html -%}
             </div>
             <nav class="overlay-menu">

@@ -1,5 +1,5 @@
 #header {
-  background: $header-color-dark;
+  // background: $header-color-dark;
 
   .navbar-section {
     &.main-menu {
@@ -21,23 +21,39 @@
   }
 
   a {
-    color: rgba($light-color, 0.7) !important;
     &:hover, &:focus, &.active {
       color: $primary-color-light !important;
+      &:not(.navbar-brand) {
+        border-bottom: solid 1px $primary-color-light;
+      }
     }
   }
 
   .dropmenu ul ul a {
     color: $dark-color !important;
+    &:hover, &:focus, &.active {
+      color: $primary-color-light !important;
+      border-bottom: none;
+    }
   }
 
-  .header-dark &:not(.scrolled) {
-    a {
-      &:hover, &:focus, &.active {
-        color: $primary-color-light !important;
+  .logo {
+    .logo-alt {
+      display: none;
+    }
+  }
+
+  .header-dark.header-transparent &:not(.scrolled) {
+    .logo {
+      .logo {
+        display: none;
+      }
+      .logo-alt {
+        display: block;
       }
     }
-    .dropmenu ul ul a {
+    a {
+      color: $dark-color !important;
       &:hover, &:focus, &.active {
         color: $primary-color-light !important;
       }
@@ -50,6 +66,29 @@
   //     height: 56px;
   //   }
   // }
+}
+
+.header-dark {
+  #header.scrolled {
+    background: $header-color-dark;
+  }
+}
+
+.header-dark.header-transparent {
+  #header.scrolled {
+    a {
+      color: $light-color !important;
+      &:hover, &:focus, &.active {
+        color: $primary-color-light !important;
+      }
+    }
+    .dropmenu ul ul a {
+      color: $dark-color !important;
+      &:hover, &:focus, &.active {
+        color: $primary-color-light !important;
+      }
+    }
+  }
 }
 
 // Animate Fixed Header
