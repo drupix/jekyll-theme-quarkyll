@@ -16,26 +16,18 @@
             {%- include showcase.html -%}
         {%- endif -%}
         <section id="start">
-            {%- if page.showcase -%}
-                <section class="section home-content offset-box">
-                    <section class="container {{ site.grid-size | default: "grid-lg" }}">
-                        <div class="frame-box">
-                            {{ content }}
-                            {%- if page.layout == 'home' -%}
-                                {%- include features.html -%}
-                            {%- endif -%}
-                        </div>
-                    </section>
+            <section {% if page.showcase == "" or page.showcase == nil %}id="body-wrapper"{% endif %} class="section home-content offset-box">
+                <section class="container {{ site.grid-size | default: "grid-lg" }}">
+                    <div class="frame-box">
+                        {% if page.hide_title != true %}<h1 class="{{ page.classes }}">{{ page.title }}</h1>{% endif %}
+                        {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+                        {{ content }}
+                        {%- if page.layout == 'home' -%}
+                            {%- include features.html -%}
+                        {%- endif -%}
+                    </div>
                 </section>
-            {%- else -%}
-                <section id="body-wrapper" class="section offset-box">
-                    <section class="container {{ site.grid-size | default: "grid-lg" }}">
-                        <div class="frame-box">
-                            {{ content }}
-                        </div>
-                    </section>
-                </section>
-            {%- endif -%}
+            </section>
         </section>
     </div>
 

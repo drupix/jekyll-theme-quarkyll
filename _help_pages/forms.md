@@ -1,7 +1,7 @@
 ---
 title: Forms
 layout: page
-classes: title-center-title-h1h2
+classes: title-center title-h1h2
 menus:
   help:
     title: Forms
@@ -9,13 +9,9 @@ menus:
     identifier: forms
 ---
 
-<div class="title-center title-h1h2">
-    <h1>Forms</h1>
+<div class="container">
+  <p>Forms provide the most common control styles used in forms, including input, textarea, select, checkbox, radio and switch.</p>
 </div>
-
-<br/>
-
-Forms provide the most common control styles used in forms, including input, textarea, select, checkbox, radio and switch.
 
 ## Form input
 

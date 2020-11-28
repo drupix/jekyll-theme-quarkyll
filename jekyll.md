@@ -1,5 +1,7 @@
 ---
-title: Stuff around Jekyll
+title: Stuff around Quark & Jekyll
+subtitle: Stuff around Quark
+hide_title: true
 layout: page
 classes:  title-center title-h1h2
 permalink: "/quarkyll/"
@@ -24,8 +26,6 @@ menus:
     identifier: quarkyll
     hide-in-nav: false
 ---
-
-## Stuff around Quark
 
 [Quark documentation](https://github.com/getgrav/grav-theme-quark#quark-theme) - Official Quark documentation
 

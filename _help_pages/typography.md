@@ -1,19 +1,13 @@
 ---
 title: Typography
 layout: page
-classes: title-center-title-h1h2
+classes: title-center title-h1h2
 menus:
   help:
     title: Typography
     weight: 2
     identifier: typography
 ---
-
-<!-- ! Details on the full capabilities of Spectre.css can be found in the [Official Spectre Documentation](https://picturepan2.github.io/spectre/elements.html) -->
-
-<div class="title-center title-h1h2">
-    <h1>Typography</h1>
-</div>
 
 {% comment %}
 {% notices :color => 'yellow' %}

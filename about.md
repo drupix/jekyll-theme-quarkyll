@@ -1,5 +1,6 @@
 ---
 title: This is my first Jekyll website
+subtitle: ...and my first Jekyll Theme
 layout: page
 classes:  title-center title-h1h2
 permalink: "/about/"
@@ -23,10 +24,6 @@ menus:
     identifier: about
     hide-in-nav: false
 ---
-
-# This is my first Jekyll website
-
-## ...and my first Jekyll Theme
 
 <span class="dropcap">Q</span>**uark theme** is the new default theme for Grav built with **Spectre.css** a lightweight, responsive and modern CSS framework. Spectre provides  basic styles for typography, elements, and a responsive layout system that utilizes best practices and consistent language design.
 
