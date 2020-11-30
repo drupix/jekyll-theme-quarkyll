@@ -80,3 +80,7 @@ menus:
 #### JekyllConf
 
 [JekyllConf](https://jekyllconf.com/){:rel="noreferrer"} - The free, online global conference for all things Jekyll
+
+## Other stuff discovered while learning Jekyll
+
+[Shields.io](https://shields.io/) - A a service for concise, consistent, and legible badges in SVG and raster format, also on [Github](https://github.com/badges/shields)

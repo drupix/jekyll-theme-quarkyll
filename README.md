@@ -1,10 +1,52 @@
-# jekyll-theme-quarkyll
+<!--
+---
+title: Read me
+layout: page
+classes:  title-center title-h1h2
+permalink: "/readme/"
+menus:
+  header:
+    title: Readme
+    weight: 5
+    identifier: readme
+    hide-in-nav: false
+---
+-->
+<!-- # [Jekyll theme Quarkyll](https://github.com/drupix/jekyll-theme-quarkyll) -->
+<!--
+## jekyll-theme-quarkyll
 
+---
+-->
+
+<!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE) -->
+<!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE) -->
+<!-- ![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square) -->
+![GitHub](https://img.shields.io/github/license/drupix/spectre?style=flat-square&color=3085EE)
+<!-- [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/) -->
+[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%204.1-blue.svg?style=flat-square&logo=jekyll&color=3085EE)](https://jekyllrb.com/)
+<!-- [![Ruby gem](https://img.shields.io/gem/v/minimal-mistakes-jekyll.svg)](https://rubygems.org/gems/minimal-mistakes-jekyll) -->
+[![Ruby gem](https://img.shields.io/badge/gem-v0.1.0-blue.svg?style=flat-square&logo=rubygems&color=3085EE)](https://rubygems.org/gems/jekyll-theme-quarkyll)
+<!-- ![Gem](https://img.shields.io/gem/v/jekyll-theme-quarkyll?color=3085EE&style=flat-square) -->
+
+**Sould be installed with the theme** [![jekyll-menus](https://img.shields.io/static/v1?logo=jekyll&style=flat-square&label=jekyll-menu&message=v0.6.0&color=3085EE)](https://github.com/forestryio/jekyll-menus)
+
+**To test with** [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%204.1-blue.svg?style=flat-square&logo=jekyll&color=red)](https://jekyllrb.com/)
+
+{:.alert}
 **WARNING:** jekyll-theme-quarkyll is under developpment and not yet ready for production
 
+---
+<!--
 Welcome to Quarkyll, a new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
 
 To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+
+![Quarkyll live preview](/screenshot.png)
+
+### Layout examples
+
+![Layout examples](/screenshot.png)
 
 ## Installation
 
@@ -34,7 +76,7 @@ TODO: Write usage instructions here. Describe your available layouts, includes, 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/[USERNAME]/hello](https://github.com/[USERNAME]/hello). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/drupix/jekyll-theme-quarkyll](https://github.com/drupix/jekyll-theme-quarkyll). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
@@ -48,3 +90,4 @@ To add a custom directory to your theme-gem, please edit the regexp in `jekyll-t
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+-->
