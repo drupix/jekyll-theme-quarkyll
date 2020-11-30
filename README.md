@@ -12,7 +12,7 @@ menus:
     hide-in-nav: false
 ---
 -->
-<!-- # [Jekyll theme Quarkyll](https://github.com/drupix/jekyll-theme-quarkyll) -->
+# [Jekyll theme Quarkyll](https://drupix.github.io/jekyll-theme-quarkyll/)
 <!--
 ## jekyll-theme-quarkyll
 
