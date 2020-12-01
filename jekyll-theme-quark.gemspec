@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["enzo@drupal-solutions.ch"]
 
   spec.summary       = "A simple Jekyll theme based on Quark for Grav CMS."
-  spec.homepage      = "https://github.com/drupix/jekyll-theme-quarkyll."
+  spec.homepage      = "https://github.com/drupix/jekyll-theme-quarkyll"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
