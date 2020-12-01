@@ -1,7 +1,7 @@
 ---
 title: Root documentation title
 # subtitle: Why Jekyll?
-layout: page
+layout: default
 classes: xfront title-center title-h1h2
 # permalink: "/docs"
 # showcase:
