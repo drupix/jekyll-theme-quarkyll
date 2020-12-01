@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-remote_theme             : "drupix/jekyll-theme-quarkyll@0.1.0"
+# remote_theme             : "drupix/jekyll-theme-quarkyll@0.1.0"
+remote_theme             : "drupix/jekyll-theme-quarkyll"
 
 # Theme options: (added as body class)
 theme_options: [
