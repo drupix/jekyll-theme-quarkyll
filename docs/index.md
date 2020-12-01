@@ -2,7 +2,7 @@
 # title: Highlights section
 # subtitle: Why Jekyll?
 layout: home
-classes: front title-center title-h1h2
+classes: xfront title-center title-h1h2
 permalink: "/docs"
 # showcase:
 #   title: Say hello to Quarkyll
