@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  Quarkyll Jekyll Theme 0.1.0 by drupix
+  Copyright 2020-2021 Enzo Di Resta - drupal-solutions.ch | @drupix
+  Free for personal and commercial use under the MIT license
+  https://github.com/drupix/jekyll-theme-quarkyll/blob/master/LICENSE.txt
+-->
+<html lang="{{ page.lang | default: site.locale | slice: 0,2 | default: "en" }}">
+<head>
+    {%- include head.html -%}
+</head>
+<body id="top" class="{{ page.classes | default: "" }} {% if page.showcase %}showcase{% endif %} {{ site.theme_options | join: " " }}">
+    <div id="page-wrapper">
+        {%- include header.html -%}
+        {%- if page.showcase -%}
+            {%- include showcase.html -%}
+        {%- endif -%}
+        <section id="start">
+            <section {% if page.showcase == "" or page.showcase == nil %}id="body-wrapper"{% endif %} class="section home-content offset-box">
+                <section class="container {{ site.grid-size | default: "grid-lg" }}">
+                    <div class="frame-box">
+                        {% if page.hide_title != true %}<h1 class="{{ page.classes }}">{{ page.title }}</h1>{% endif %}
+                        {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+                        {{ content }}
+                        {%- if page.layout == 'home' -%}
+                            {%- include features.html -%}
+                        {%- endif -%}
+                    </div>
+                </section>
+            </section>
+        </section>
+    </div>
+
+    {% include pre-footer.html %}
+    {% include footer.html %}
+
+    <div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div class="mobile-logo">
+                {%- assign mobile = true -%}
+                {% include logo.html %}
+            </div>
+            <nav class="overlay-menu">
+                {%- assign menu = site.menus.header -%}
+                {%- assign menu_class = 'main-menu' -%}
+                {%- assign tree = true -%}
+                {% include menus.html %}
+            </nav>
+        </div>
+    </div>
+
+    <script src="/assets/js/quarkyll-bootstrap.js" ></script>
+    <script src="/assets/js/jquery.treemenu.js" ></script>
+    <script src="/assets/js/site.js" ></script>
+</body>
+</html>
