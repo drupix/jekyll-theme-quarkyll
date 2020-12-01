@@ -2,8 +2,8 @@
 # title: Highlights section
 # subtitle: Why Jekyll?
 layout: home
-classes: xxfront title-center title-h1h2
-permalink: "/"
+classes: front title-center title-h1h2
+permalink: "/docs"
 # showcase:
 #   title: Say hello to Quarkyll
 #   subtitle: A Grav themes for Jekyll
@@ -28,7 +28,7 @@ permalink: "/"
 #     # hero-small,
 #     # hero-tiny,
 #   ]
-  # to_start: false
+#   to_start: false
 # menus:
 #   header:
 #     title: Home

@@ -49,9 +49,9 @@ logo_light : "/assets/images/logo-quarkyll-light.png" # path of alternate logo i
 #   line in _config.yml. It will appear in your document head meta (for
 #   Google search results) and in your feed.xml site description.
 
-url         : # the base hostname & protocol for your site e.g. "https://drupix.github.io"
-baseurl     : # the subpath of your site, e.g. "/blog"
-repository  :
+# url         : # the base hostname & protocol for your site e.g. "https://drupix.github.io"
+# baseurl     : # the subpath of your site, e.g. "/blog"
+# repository  :
 
 plugins:
   - jekyll-menus
@@ -103,8 +103,8 @@ collections:
   help_pages:
     output: true
     label: help_page
-    permalink: /help-pages/:path/
+    permalink: /:collection/:path/
   devel_pages:
     output: true
     label: devel_page
-    permalink: /devel-pages/:path/
+    permalink: /:collection/:path/
