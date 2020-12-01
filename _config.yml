@@ -52,12 +52,12 @@ url         : # the base hostname & protocol for your site e.g. "https://drupix.
 baseurl     : # the subpath of your site, e.g. "/blog"
 repository  :
 
-plugins:
-  - jekyll-menus
+# plugins:
+#   - jekyll-menus
 
 # mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-menus
+# whitelist:
+#   - jekyll-menus
   # - jekyll-paginate
   # - jekyll-sitemap
   # - jekyll-gist

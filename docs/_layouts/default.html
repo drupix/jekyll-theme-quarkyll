@@ -41,7 +41,10 @@
                 {% include logo.html %}
             </div>
             <nav class="overlay-menu">
-                {%- assign menu = site.menus.header -%}
+                <!--{%- assign menu = site.menus.header -%}-->
+                {%- if site.data.menus and site.data.menus.header -%}
+                    {%- assign menu = site.data.menus.header -%}
+                {%- endif -%}
                 {%- assign menu_class = 'main-menu' -%}
                 {%- assign tree = true -%}
                 {% include menus.html %}

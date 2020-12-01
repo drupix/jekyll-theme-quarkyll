@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   # spec.add_runtime_dependency "jekyll", "~> 4.1"
   spec.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
-  spec.add_runtime_dependency "jekyll-menus", "~> 0.6"
+  # spec.add_runtime_dependency "jekyll-menus", "~> 0.6"
 
   spec.add_development_dependency "bundler", "~> 2.1.4"
   spec.add_development_dependency "rake", "12.3.3"

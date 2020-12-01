@@ -68,12 +68,12 @@ repository  : "drupix/jekyll-theme-quarkyll"
 
 # Build settings
 # theme: minima
-plugins:
-  - jekyll-menus
+# plugins:
+#   - jekyll-menus
 
 # mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-menus
+# whitelist:
+#   - jekyll-menus
   # - jekyll-paginate
   # - jekyll-sitemap
   # - jekyll-gist
