@@ -1,7 +1,7 @@
 ---
 # title: Highlights section
 # subtitle: Why Jekyll?
-layout: home
+layout: page
 classes: xfront title-center title-h1h2
 permalink: "/docs"
 # showcase:
@@ -36,3 +36,5 @@ permalink: "/docs"
 #     identifier: home
 #     hide-in-nav: false
 ---
+
+Docs index...
