@@ -1,4 +1,4 @@
-{% capture image_path %}{{ page.showcase.image }}{% endcapture %}
+{% capture image_path %}{{ page.showcase.image | relative_url }}{% endcapture %}
 <section id="showcase" class="section hero {{ page.showcase.classes | join: " " }}" {% if page.showcase.image %}style="background-image: url({{image_path}});"{% endif %}>
   <div class="image-overlay"></div>
   <section class="container {{ site.grid-size | default: "grid-lg" }}" style="text-align: center">
