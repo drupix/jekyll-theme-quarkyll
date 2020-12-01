@@ -16,7 +16,7 @@
 
 **To test with** [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%204.1-blue.svg?style=flat-square&logo=jekyll&color=red)](https://jekyllrb.com/)
 
-**WARNING:** jekyll-theme-quarkyll is under developpment and not yet ready for production
+**:warning: WARNING:** jekyll-theme-quarkyll is under developpment and not yet ready for production :bomb:
 
 ---
 
