@@ -1,9 +1,9 @@
 ---
-# title: Highlights section
+title: Root documentation title
 # subtitle: Why Jekyll?
 layout: page
 classes: xfront title-center title-h1h2
-permalink: "/docs"
+# permalink: "/docs"
 # showcase:
 #   title: Say hello to Quarkyll
 #   subtitle: A Grav themes for Jekyll
@@ -37,4 +37,4 @@ permalink: "/docs"
 #     hide-in-nav: false
 ---
 
-Docs index...
+This is the content of the Docs index page...
