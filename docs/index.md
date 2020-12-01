@@ -3,7 +3,7 @@ title: Root documentation title
 # subtitle: Why Jekyll?
 layout: default
 classes: xfront title-center title-h1h2
-# permalink: "/docs"
+permalink: "/docs"
 # showcase:
 #   title: Say hello to Quarkyll
 #   subtitle: A Grav themes for Jekyll
