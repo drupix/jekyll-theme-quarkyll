@@ -10,8 +10,8 @@
         {%- if item.children -%}
           {%- assign menu_link = '#' -%}
         {%- endif -%}
-        <a class="{% if item.url == page.url | relative_url %}active{% endif %}"
-          href="{{ menu_link }}"
+        <a class="{% if item.url == page.url %}active{% endif %}"
+          href="{{ menu_link | relative_url }}"
           title="{{ item.title }}">{{ item.title }}</a>
         {%- if item.children -%}
           {%- assign menu = item.children -%}
