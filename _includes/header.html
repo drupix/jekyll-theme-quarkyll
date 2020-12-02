@@ -10,7 +10,7 @@
         <nav class="dropmenu animated">
           <!--{%- assign menu = site.menus.header -%}-->
           {%- if site.data.menus and site.data.menus.header -%}
-            {%- assign menu = site.data.menus.header -%}
+            {%- assign menu = site.data.menus.header | sort: 'weight' -%}
           {%- endif -%}
           {%- assign menu_class = 'main-menu' -%}
           {%- include menus.html -%}

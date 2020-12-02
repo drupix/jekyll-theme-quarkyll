@@ -45,7 +45,7 @@
             <nav class="overlay-menu">
                 <!--{%- assign menu = site.menus.header -%}-->
                 {%- if site.data.menus and site.data.menus.header -%}
-                    {%- assign menu = site.data.menus.header -%}
+                    {%- assign menu = site.data.menus.header | sort: 'weight' -%}
                 {%- endif -%}
                 {%- assign menu_class = 'main-menu' -%}
                 {%- assign tree = true -%}
