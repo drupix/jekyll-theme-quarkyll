@@ -19,7 +19,9 @@
             <section {% if page.showcase == "" or page.showcase == nil %}id="body-wrapper"{% endif %} class="section home-content offset-box">
                 <section class="container {{ site.grid-size | default: "grid-lg" }}">
                     <div class="frame-box">
-                        {% if page.hide_title != true %}<h1 class="{{ page.classes }}">{{ page.title }}</h1>{% endif %}
+                        {% if page.hide_title != true %}
+                            <h1 class="{{ page.classes }}{% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title }}</h1>
+                        {% endif %}
                         {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
                         {{ content }}
                         {%- if page.layout == 'home' -%}
