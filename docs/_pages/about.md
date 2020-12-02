@@ -4,25 +4,12 @@ subtitle: This is my first Jekyll website
 layout: page
 classes:  title-center title-h1h2
 permalink: "/about/"
-showcase:
-  # title: What can I say ???
-  # subtitle: Mmmhhh. let me think...
-  # content_title: What can I say ???
-  # content_items:
-  #   - '<h5>Mmmhhh. let me think...</h5>'
-  image:
-  classes: [
-    text-light,
-    title-h1h2,
-    parallax,
-  ]
-  to_start: false
-menus:
-  header:
-    title: About
-    weight: 2
-    identifier: about
-    hide-in-nav: false
+# menus:
+#   header:
+#     title: About
+#     weight: 2
+#     identifier: about
+#     hide-in-nav: false
 ---
 
 ## ...and my first Jekyll Theme
