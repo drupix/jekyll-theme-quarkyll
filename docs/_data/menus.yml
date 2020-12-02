@@ -1,5 +1,8 @@
 header:
-  - url: https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/
-    title: Docs
-    identifier: docs
+  - title: Quick-Start Guide
+    url: https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/
+    identifier: quick_start_guide
+    weight: 0
+  - title: "About"
+    url: /about/
     weight: 1
