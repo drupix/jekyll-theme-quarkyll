@@ -1,6 +1,6 @@
 header:
   - title: Quick-Start Guide
-    url: /docs/quick-start-guide/
+    url: /quick-start-guide/
     identifier: quick_start_guide
     weight: 0
   - title: "About"
