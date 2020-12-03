@@ -25,7 +25,10 @@
                         {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
                         {{ content }}
                         {%- if page.layout == 'home' -%}
+                            {{ content }}
                             {%- include features.html -%}
+                        {%- else -%}
+                            {{ content }}
                         {%- endif -%}
                     </div>
                 </section>
@@ -43,7 +46,6 @@
                 {% include logo.html %}
             </div>
             <nav class="overlay-menu">
-                <!--{%- assign menu = site.menus.header -%}-->
                 {%- if site.data.menus and site.data.menus.header -%}
                     {%- assign menu = site.data.menus.header -%}
                 {%- endif -%}

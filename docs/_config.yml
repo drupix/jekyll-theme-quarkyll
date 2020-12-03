@@ -33,6 +33,7 @@ theme_options: [
 
 # Grid size: grid-sm, grid-md grid-lg
 grid-size       : grid-lg
+header-grid-size: grid-lg
 
 # Other config
 locale          : "fr-CH"

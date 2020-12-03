@@ -1,15 +1,11 @@
 <section id="header" class="section">
-  <!-- <section class="container {{ site.grid-size | default: "grid-lg" }}"> -->
-  <section class="container">
+  <section class="container {{ site.header-grid-size }}">
     <nav class="navbar">
-      <!--{%- assign default_paths = site.pages | map: "path" -%}
-      {%- assign page_paths = site.header_pages | default: default_paths -%}-->
       <section class="navbar-section logo">
         {%- include logo.html -%}
       </section>
       <section class="navbar-section main-menu">
         <nav class="dropmenu animated">
-          <!--{%- assign menu = site.menus.header -%}-->
           {%- if site.data.menus and site.data.menus.header -%}
             {%- assign menu = site.data.menus.header | sort: 'weight' -%}
           {%- endif -%}
