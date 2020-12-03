@@ -15,7 +15,7 @@ theme_options: [
   header-fixed,        # When enabled, the header will be fixed at the top of the browser
   header-animated,     # When enabled, the header will animate to a smaller header when scrolling
   header-dark,         # When enabled, a dark-friendly style will be used
-  header-transparent,  # When enabled, a transparent style will be used
+  # header-transparent,  # When enabled, a transparent style will be used
   sticky-footer,       # When enabled, the footer will be sticky at the bottom of the browser
   footer-dark,         # When enabled, a dark-friendly style will be used
 ]
@@ -115,13 +115,62 @@ exclude:
   - /docs # ignore Quarkyll /docs
   - /test # ignore Quarkyll /test
 
+# Conversion
+# markdown: kramdown
+# highlighter: rouge
+# lsi: false
+# excerpt_separator: "\n\n"
+# incremental: false
+
+
+# # Markdown Processing
+# kramdown:
+#   input: GFM
+#   hard_wrap: false
+#   auto_ids: true
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..6
+#   smart_quotes: lsquo,rsquo,ldquo,rdquo
+#   enable_coderay: false
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# # Outputting
+# permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+# timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# HTML Compression
+# - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
 # Collections
 collections:
   help_pages:
     output: true
     label: help_page
     permalink: /:collection/:path/
-  devel_pages:
-    output: true
-    label: devel_page
-    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true

@@ -5,12 +5,19 @@
 }
 
 // Notices
+.notice,
 .notices {
   padding: 1px 1px 1px 30px;
   //margin: 1.5rem 0;
-  border-left: 10px solid #5bc0de;
-  background: #f4f8fa;
-  color: #28a1c5;
+  border-left: 10px solid darkgrey;
+  background: lightgrey;
+  color: grey;
+
+  &.info {
+    border-left: 10px solid #5bc0de;
+    background: #f4f8fa;
+    color: #28a1c5;
+  }
 
   &.warning {
     border-left: 10px solid #f0ad4e;
@@ -18,17 +25,12 @@
     color: #df8a13;
   }
 
-  &.error {
+  &.error,
+  &.danger {
     border-left: 10px solid #d9534f;
     background: #fdf7f7;
     color: #b52b27;
   }
-
-  // &.blue {
-  //   border-left: 10px solid #5bc0de;
-  //   background: #f4f8fa;
-  //   color: #28a1c5;
-  // }
 
   &.success {
     border-left: 10px solid #5cb85c;

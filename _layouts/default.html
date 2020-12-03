@@ -23,9 +23,12 @@
                             <h1 class="{{ page.classes }}{% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title }}</h1>
                         {%- endif -%}
                         {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
-                        {{ content }}
+
                         {%- if page.layout == 'home' -%}
+                            {{ content }}
                             {%- include features.html -%}
+                        {%- else -%}
+                            {{ content }}
                         {%- endif -%}
                     </div>
                 </section>
