@@ -12,7 +12,7 @@ showcase:
   content_items:
   content_items:
     - "**Quarkyll** is a flexible multi-columns Jekyll theme, perfect for building... **Mmhhh... I don't know!! Let me think until I finished it!**"
-    - '<a href="/docs/quick-start-guide/" class="btn btn-primary btn-lg">Read Quarkyll documentation</a>'
+    - '<a href="docs/quick-start-guide/" class="btn btn-primary btn-lg">Read Quarkyll documentation</a>'
   image: /assets/images/header.jpg
   classes: [
     text-light,
