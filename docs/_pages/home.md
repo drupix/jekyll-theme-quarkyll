@@ -10,9 +10,9 @@ showcase:
   subtitle: A Grav themes for Jekyll
   content_title: Fast, Simple, Powerful...
   content_items:
-    - '<strong>Quark</strong> is the new default theme for <a href="http://github.com/getgrav/grav" rel="noreferrer">Grav CMS</a>. This theme is built with the <a href="https://picturepan2.github.io/spectre/" rel="noreferrer">Spectre.css</a> framework and provides a powerful base for developing your own themes.'
-    - '<strong>As I like it, I decided to rewrite it for Jekyll... and in the same time learn about Jekyll!</strong>'
-    - '<a href="https://jekyllrb.com/docs" class="btn btn-primary btn-lg" target="_blank" rel="noreferrer">Read Jekyll documentation</a>'
+  content_items:
+    - "**Quarkyll** is a flexible multi-columns Jekyll theme, perfect for building... **Mmhhh... I don't know!! Let me think until I finished it!**"
+    - '<a href="{{ /docs/quick-start-guide/ | relative_url }}" class="btn btn-primary btn-lg">Read Quarkyll documentation</a>'
   image: /assets/images/header.jpg
   classes: [
     text-light,
