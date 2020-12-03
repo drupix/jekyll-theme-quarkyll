@@ -2,6 +2,7 @@
 title: Root documentation title
 # subtitle: Why Jekyll?
 layout: home
+permalink: /
 author_profile: true
 classes: front title-center title-h1h2
 showcase:
