@@ -2,28 +2,50 @@
 layout: default
 ---
 
-{% comment %} {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% elsif page.header.video.id and page.header.video.provider %}
-  {% include page__hero_video.html %}
-{% endif %}
+{%- assign content_size = '' -%}
+{%- assign sidebar_first_size = 'col-12' -%}
+{%- assign sidebar_seconf_size = 'col-12' -%}
 
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %} {% endcomment %}
+{%- if page.sidebar_first and page.sidebar_second -%}
+  {%- assign content_size = 'column col-6 col-md-12' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+  {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+{%- elsif page.sidebar_first and page.toc -%}
+  {%- assign content_size = 'column col-6 col-md-12' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+  {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+{%- elsif page.sidebar_first or page.author_profile or layout.author_profile -%}
+  {%- assign content_size = 'column col-9 col-md-12' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+{%- elsif page.sidebar_second and page.author_profile or layout.author_profile -%}
+  {%- assign content_size = 'column col-6 col-md-12' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+  {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+{%- endif -%}
 
-<div id="main" role="main">
-  {% comment %} {% include sidebar.html %} {% endcomment %}
+<section class="archive__content {% if page.author_profile or layout.author_profile or page.sidebar_first or page.sidebar_second %}columns{% endif %}" itemprop="text">
+  {% if page.author_profile or layout.author_profile or page.sidebar_first %}
+    <aside class="sidebar__left column {{ sidebar_first_size }}">
+      {%- assign side = false -%}
+      {% if page.sidebar_first %}
+        {%- assign side = 'first' -%}
+      {% elsif page.sidebar_second %}
+        <!-- TODO: Check here -->
+        {%- assign side = 'second' -%}
+      {%- endif -%}
+      {% include sidebar.html side=side %}
+      {% comment %} {% include sidebar.html %} {% endcomment %}
+    </aside>
+  {%- endif -%}
 
-  <div class="archive">
-    {% comment %} {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
-    {% endunless %} {% endcomment %}
-    <div class="notices blue">
-      <p>file: _layouts/archive.html</p>
-    </div>
+  <div class="archive {{ content_size }}">
     {{ content }}
   </div>
-</div>
+
+  {% if page.sidebar_second %}
+    <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %} {{ sidebar_second_size }}">
+      {%- assign side = 'second' -%}
+      {% include sidebar.html side=side %}
+    </aside>
+  {% endif %}
+</section>

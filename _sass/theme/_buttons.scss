@@ -19,4 +19,14 @@
   &.btn-inverse {
     @include theme-button-variant($btn-color, $btn-inverse-bg-color);
   }
+
+  &.btn--facebook {
+    @include theme-button-variant($btn-color, #3b5998);
+  }
+  &.btn--linkedin {
+    @include theme-button-variant($btn-color, #007bb6);
+  }
+  &.btn--twitter {
+    @include theme-button-variant($btn-color, #55acee);
+  }
 }

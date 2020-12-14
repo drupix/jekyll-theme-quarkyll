@@ -4,10 +4,21 @@
   }
 }
 
+img {
+  &.float-left {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &.float-right {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
 // Notices
-.notice,
 .notices {
-  padding: 1px 1px 1px 30px;
+  //padding: 1px 1px 1px 30px;
+  padding: 1px 30px;
   //margin: 1.5rem 0;
   border-left: 10px solid darkgrey;
   background: lightgrey;
@@ -37,6 +48,18 @@
     background: #f1f9f1;
     color: #3d8b3d;
   }
+
+  & > h1, & > h2,
+  & > h3, & > h4,
+  & > h5, & > h6 {
+    margin-top: 1rem;
+  }
+}
+p.notices {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Dropcaps */
@@ -52,10 +75,21 @@
 }
 
 // Icon Tweaks
-i.la {
+i.la,
+i.las,
+i.lab {
   &.la-heart, &.la-heart-o {
     &.pulse {
       color: #920
     }
+  }
+  &.red {
+    color: #920
+  }
+  &.green {
+    color: #009200
+  }
+  &.blue {
+    color: #000092
   }
 }

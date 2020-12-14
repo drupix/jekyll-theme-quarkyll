@@ -62,3 +62,15 @@ $footer-color-dark: #000;
 
 // // Icons Awesome
 // $icons-awesome-horiz-padding: 5px;
+
+// Figure
+//$figure-caption-font-family: Georgia,Times,serif !default;
+$figure-caption-font-family: $base-font-family, $fallback-font-family !default;
+$figure-caption-font-size: 1em;
+$figure-caption-color: inherit; // $light-color;
+$figure-caption-bg-color: inherit; // #333;
+
+// Highlights
+$highlight-code-color: #fff !default;
+$highlight-code-bg-color: #263238 !default;
+$highlight-code-gutter-color: $gray-color-light !default;

@@ -1,0 +1,58 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+<div class="filter taxonomy__index">
+  {% assign allPosts = site.posts | where_exp: "item", "item.hidden != true" %}
+
+  <input type="radio" id="tag-0" class="filter-tag" name="filter-radio" hidden checked>
+  {% for i in (1..categories_max) reversed %}
+    {% for category in site.categories %}
+      {% if category[1].size == i %}
+        <input type="radio" id="tag-{{ forloop.index }}" class="filter-tag" name="filter-radio" hidden>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  <div class="filter-nav">
+    <label class="chip chip-lg" for="tag-0">All<figure class="avatar avatar-right bg-dark" data-initial="{{ allPosts | size }}"></figure></label>
+    {% for i in (1..categories_max) reversed %}
+      {% for category in site.categories %}
+        {% if category[1].size == i %}
+          <label class="chip chip-lg" for="tag-{{ forloop.index }}">
+            {{ category[0] }}
+            <figure class="avatar avatar-right bg-dark" data-initial="{{ i }}"></figure>
+          </label>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  {% assign items_layout = page.items_layout | default: 'list' %}
+  <div class="filter-body">
+    {% for i in (1..categories_max) reversed %}
+      {% for category in site.categories %}
+        {% if category[1].size == i %}
+          <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section filter-item" data-tag="tag-{{ forloop.index }}">
+            <h3 class="archive__subtitle"><i class="las la-folder-open" aria-hidden="true"></i> {{ category[0] }}</h3>
+            <div class="entries-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
+              {% for post in category.last %}
+                {% include archive-single.html type=items_layout %}
+              {% endfor %}
+            </div>
+            <a href="#start" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+          </section>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>

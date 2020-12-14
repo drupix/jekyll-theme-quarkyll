@@ -1,6 +1,25 @@
 {% capture image_path %}{{ page.showcase.image | relative_url }}{% endcapture %}
+{% if page.showcase.overlay_color %}
+  {% if page.showcase.overlay_gradient %}
+    {% assign rgb = page.showcase.overlay_gradient %}
+    {% capture overlay_style %}
+      background: linear-gradient(to bottom,rgba({{ rgb.r }}, {{ rgb.g }}, {{ rgb.b }},.5),rgba({{ rgb.r }}, {{ rgb.g }}, {{ rgb.b }},.2));
+    {% endcapture %}
+  {% else %}
+    {% if page.showcase.overlay_opacity %}
+      {% assign overlay_opacity = page.showcase.overlay_opacity %}
+    {% else %}
+      {% assign overlay_opacity = 1 %}
+    {% endif %}
+    {% capture overlay_style %}
+      background: {{ page.showcase.overlay_color }};
+      opacity: {{ overlay_opacity }};
+    {% endcapture %}
+  {% endif %}
+{% endif %}
+
 <section id="showcase" class="section hero {{ page.showcase.classes | join: " " }}" {% if page.showcase.image %}style="background-image: url({{image_path}});"{% endif %}>
-  <div class="image-overlay"></div>
+  <div class="image-overlay" {% if page.showcase.overlay_color %} style="{{ overlay_style }}" {% endif %}></div>
   <section class="container {{ site.grid-size | default: "grid-lg" }}" style="text-align: center">
     {%- if page.showcase.title -%}
       <h1>{{ page.showcase.title }}</h1>
@@ -12,12 +31,20 @@
       <h3>{{ page.showcase.content_title }}</h3>
     {%- endif -%}
 
-    {%- for el in page.showcase.content_items -%}
+    {%- if page.showcase.metas -%}
+      {% include page__meta.html %}
+    {%- endif -%}
+
+    {%- for el in page.showcase.showcase_items -%}
       {% comment %} <p>{{ el | markdownify }}</p> {% endcomment %}
       {{ el | markdownify }}
     {%- endfor -%}
   </section>
   {%- if page.showcase.to_start != false -%}
     <i id="to-start" class="pulse la la-angle-down"></i>
+  {%- endif -%}
+  {%- if page.showcase.image and page.showcase.caption -%}
+    {% assign caption_align = page.showcase.caption_align | default: 'center' %}
+    <span class="showcase-caption {% if caption_align %}text-{{caption_align}}{% endif %}">{{ page.showcase.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
   {%- endif -%}
 </section>

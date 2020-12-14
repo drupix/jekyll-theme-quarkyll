@@ -8,11 +8,9 @@ classes: front title-center title-h1h2
 showcase:
   title: Say hello to Quarkyll
   subtitle: A Grav themes for Jekyll
-  content_title: Fast, Simple, Powerful...
-  content_items:
-  content_items:
+  showcase_items:
     - "**Quarkyll** is a flexible multi-columns Jekyll theme, perfect for building... **Mmhhh... I don't know!! Let me think until I finished it!**"
-    - '<a href="docs/quick-start-guide/" class="btn btn-primary btn-lg">Read Quarkyll documentation</a>'
+    - '<a href="docs/quick-start-guide/" class="btn btn-primary btn-lg"><i class="las la-book"></i> Quick-Start Guide</a>'
   image: /assets/images/header.jpg
   classes: [
     text-light,
@@ -38,12 +36,8 @@ showcase:
 #     hide-in-nav: false
 ---
 
-<h3><strong>Transform your plain text into<br/>static websites and blogs</strong></h3>
+### **Transform your plain text into<br/>static websites and blogs**
 
-<p>
-  No longer are you a <em>slave to your CMS</em>. Grav <strong>empowers</strong> you to
-  create anything from a <a target="_blank" href="https://demo.getgrav.org/onepage-skeleton" rel="noreferrer">simple one-page site</a>,
-  a <a target="_blank" href="https://demo.getgrav.org/blog-skeleton" rel="noreferrer">beautiful blog</a>,
-  a powerful and feature-rich <a target="_blank" href="https://demo.getgrav.org/shop-skeleton" rel="noreferrer">product site</a>,
-  or pretty much anything you can dream up!
-</p>
+**Quarkyll** comes from [**Quark**](https://github.com/getgrav/grav-theme-quark){: rel="noreferrer" target="_blank"}, the new default theme for [Grav CMS](https://getgrav.org/){: rel="noreferrer" target="_blank"} that is is built with the [Spectre.css](https://picturepan2.github.io/spectre/){: rel="noreferrer" target="_blank"} framework.
+
+As I like it, I decided to rewrite a Jekyll version... and in the same time learn about Jekyll!

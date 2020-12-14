@@ -9,4 +9,4 @@ redirect_from:
 toc: true
 ---
 
-Quarkyll has been developed as...
+Quick-Start Guide from **docs site**.

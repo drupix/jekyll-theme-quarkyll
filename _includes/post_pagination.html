@@ -1,0 +1,18 @@
+{% if page.previous or page.next %}
+  <ul class="pagination">
+    <li class="page-item page-prev btn btn-lg {% if page.previous == nil %}disabled{% endif %}">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="" title="{{ page.previous.title | markdownify | strip_html }}"><i class="las la-chevron-left"></i>{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+    {% else %}
+      <a href="#" class=""><i class="las la-chevron-left"></i>{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+    {% endif %}
+    </li>
+    <li class="page-item page-next btn btn-lg {% if page.next == nil %}disabled{% endif %}">
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }} <i class="las la-chevron-right"></i></a>
+    {% else %}
+      <a href="#" class="">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }} <i class="las la-chevron-right"></i></a>
+    {% endif %}
+    </li>
+  </ul>
+{% endif %}

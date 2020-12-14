@@ -1,0 +1,4 @@
+<section id="showcase" class="section hero hero-video {{ page.showcase.classes | join: " " }}">
+  {% assign video = page.header.video %}
+  {% include video id=video.id provider=video.provider danmaku=video.danmaku %}
+</section>

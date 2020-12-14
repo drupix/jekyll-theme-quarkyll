@@ -1,0 +1,20 @@
+.overlay-custom {
+  z-index: 0;
+}
+
+// Hero
+.hero {
+  .header-fixed & {
+    background-position: 50% 50%;
+  }
+}
+.hero.text-small,
+.text-small.hero {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -14,7 +14,7 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+{% comment %} <div id="main" role="main"> {% endcomment %}
   {% comment %} {% include sidebar.html %} {% endcomment %}
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
@@ -28,37 +28,124 @@ layout: default
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
           {% comment %} {% if page.title %}<h1 id="page-title" class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %} {% endcomment %}
-          {% comment %} {% include page__meta.html %} {% endcomment %}
+          {% include page__meta.html %}
         </header>
       {% endunless %}
       -->
 
-      <section class="page__content" itemprop="text">
-        {% if page.toc %}
-          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
-            </nav>
+      {% comment %} {% include page__meta.html %} {% endcomment %}
+
+      {%- assign content_size = '' -%}
+      {%- assign sidebar_first_size = 'col-12' -%}
+      {%- assign sidebar_seconf_size = 'col-12' -%}
+
+      {% comment %} {%- if page.toc and page.author_profile or layout.author_profile -%}
+          {%- assign content_size = 'col-6 col-md-12 col-lg-9' -%}
+      {%- elsif page.toc and page.sidebar_first -%}
+          {%- assign content_size = 'col-6 col-md-12 col-lg-9' -%}
+      {%- elsif page.author_profile or layout.author_profile or page.sidebar_first -%}
+          {%- assign content_size = 'col-9 col-sm-12 col-lg-12' -%}
+      {%- elsif page.toc or page.sidebar_second -%}
+          {%- assign content_size = 'col-9 col-md-12 col-lg-9' -%}
+      {%- endif -%} {% endcomment %}
+
+      {%- if page.sidebar_first and page.sidebar_second -%}
+        {%- assign content_size = 'col-6 col-md-12' -%}
+        {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+        {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+      {%- elsif page.sidebar_first and page.toc -%}
+        {%- assign content_size = 'col-6 col-md-12' -%}
+        {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+        {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+      {%- elsif page.sidebar_second and page.author_profile or layout.author_profile -%}
+        {%- assign content_size = 'col-6 col-md-12' -%}
+        {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+        {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+      {%- elsif page.toc and page.author_profile or layout.author_profile -%}
+        {%- assign content_size = 'col-6 col-lg-12' -%}
+        {%- assign sidebar_first_size = 'col-3 col-lg-12' -%}
+        {%- assign sidebar_second_size = 'col-3 col-lg-12' -%}
+      {%- elsif page.sidebar_first or page.author_profile or layout.author_profile -%}
+        {%- assign content_size = 'col-9 col-md-12' -%}
+        {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
+      {%- elsif page.sidebar_second or page.toc -%}
+        {%- assign content_size = 'col-9 col-md-12' -%}
+        {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+      {%- endif -%}
+
+
+      <section class="page__content {% if page.toc or page.author_profile or layout.author_profile or page.sidebar_first or page.sidebar_second %}columns{% endif %}" itemprop="text">
+        {% if page.author_profile or layout.author_profile or page.sidebar_first %}
+          <aside class="sidebar__left column {{ sidebar_first_size }} order-md-1">
+            {%- assign side = false -%}
+            {% if page.sidebar_first %}
+              {%- assign side = 'first' -%}
+            {% elsif page.sidebar_second %}
+              <!-- TODO: Check here -->
+              {%- assign side = 'second' -%}
+            {%- endif -%}
+            {% include sidebar.html side=side %}
+            {% comment %} {% include sidebar.html %} {% endcomment %}
+          </aside>
+        {%- endif -%}
+
+        <div class="{{ content_size }} order-lg-3">
+          {%- if  page.showcase.metas != true -%}
+            {% include page__meta.html %}
+          {%- endif -%}
+          {{ content }}
+
+          {% if page.link %}
+            <div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
+          {% endif %}
+
+          <section class="page__meta mb-4">
+            {% if site.data.ui-text[site.locale].meta_label %}
+              <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+            {% endif %}
+            {% include page__taxonomy.html %}
+            {% include page__date.html %}
+          </section>
+
+          {% if page.share %}{% include social-share.html %}{% endif %}
+
+          {% include post_pagination.html %}
+        </div>
+
+        {% if page.toc or page.sidebar_second %}
+          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %} {{ sidebar_second_size }} order-lg-2">
+            {% if page.toc %}
+              <nav class="toc">
+                <header>
+                  <h4 class="nav__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
+                </header>
+                {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+              </nav>
+            {% endif %}
+            {% if page.sidebar_second %}
+              {%- assign side = 'second' -%}
+              {% include sidebar.html side=side %}
+            {% endif %}
           </aside>
         {% endif %}
-        {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+
+        {% comment %} {{ content }} {% endcomment %}
+        {% comment %} {% if page.link %}
+          <div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
+        {% endif %} {% endcomment %}
       </section>
 
-      <!--
-      <footer class="page__meta">
+      {% comment %} <section class="page__meta mb-4">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
-        {% comment %} {% include page__taxonomy.html %} {% endcomment %}
-        {% comment %} {% include page__date.html %} {% endcomment %}
-      </footer>
-      -->
+        {% include page__taxonomy.html %}
+        {% include page__date.html %}
+      </section>
 
-      {% comment %} {% if page.share %}{% include social-share.html %}{% endif %} {% endcomment %}
+      {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% comment %} {% include post_pagination.html %} {% endcomment %}
+      {% include post_pagination.html %} {% endcomment %}
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
@@ -70,9 +157,9 @@ layout: default
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
       <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      <div class="grid__wrapper">
+      <div class="columns">
         {% for post in site.related_posts limit:4 %}
-          {% include archive-single.html type="grid" %}
+          {% include archive-single.html type="grid" grid_size=4 %}
         {% endfor %}
       </div>
     </div>
@@ -90,4 +177,4 @@ layout: default
       </div>
     </div>
   {% endif %}
-</div>
+{% comment %} </div> {% endcomment %}

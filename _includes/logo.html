@@ -1,33 +1,3 @@
-<!--{% capture logo_path %}{{ site.logo }}{% endcapture %}-->
-{%- comment -%}
-{% if mobile %}
-  {% if site.logo_light %}
-    {% capture logo_path %}{{ site.logo_light }}{% endcapture %}
-  {% else %}
-    {% capture logo_path %}{{ site.logo }}{% endcapture %}
-  {% endif %}
-{% else %}
-  {% assign mobile = false %}
-  {% if site.logo_light and site.theme_options contains "header-dark" %}
-    {% capture logo_path %}{{ site.logo_light }}{% endcapture %}
-  {% else %}
-    {% capture logo_path %}{{ site.logo }}{% endcapture %}
-  {% endif %}
-{% endif %}
-
-<a href="{{ "/" | relative_url }}" class="navbar-brand mr-10" rel="author">
-  {%- if site.logo -%}
-    <img class="logo" src="{{ logo_path | relative_url }}" alt="{{ site.title }}">
-    {% if mobile==false and site.theme_options contains "header-dark" and site.theme_options contains "header-transparent" %}
-      {% capture logo_path %}{{ site.logo }}{% endcapture %}
-      <img class="logo-alt" src="{{ logo_path | relative_url }}" alt="{{ site.title }}">
-    {%- endif -%}
-  {%- else -%}
-    <span class="site-title">{{ site.title | default: "Quarkyll" }}</span>
-    {% if site.slogan %}<span class="slogan">{{ site.slogan }}</span>{% endif %}
-  {%- endif -%}
-</a>
-{%- endcomment -%}
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 <a href="{{ '/' | relative_url }}" class="navbar-brand mr-10" rel="author">
   {%- if site.logo -%}

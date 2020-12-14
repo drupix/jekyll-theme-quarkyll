@@ -1,0 +1,16 @@
+.filter {
+  .filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    .chip {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .filter-body {
+    display: block;
+  }
+}

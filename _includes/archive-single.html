@@ -10,11 +10,18 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="notices">
-  <p>file: _includes/archive-single.html</p>
-</div>
+{% assign grid_size = include.grid_size | default: 3 %}
+{% if grid_size == 2 %}
+  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
+{% elsif grid_size == 3 %}
+  {% assign grid_class = "col-4 col-xs-12 col-sm-6 col-md-3" %}
+{% elsif grid_size == 4 %}
+  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
+{% else %}
+  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
+{% endif %}
 
-<div class="{{ include.type | default: 'list' }}__item">
+<div class="{{ include.type | default: 'list' }}__item {% if include.type == 'grid' %}column {{ grid_class }}{% endif %}">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -28,7 +35,7 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h3>
-    {% comment %} {% include page__meta.html type=include.type %} {% endcomment %}
+    {% include page__meta.html type=include.type %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>

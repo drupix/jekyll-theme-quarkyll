@@ -1,4 +1,4 @@
-# [Jekyll theme Quarkyll](https://drupix.github.io/jekyll-theme-quarkyll/)
+# [Jekyll Theme Quarkyll](https://drupix.github.io/jekyll-theme-quarkyll/)
 
 <!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE) -->
 <!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE) -->
@@ -80,7 +80,7 @@ To add a custom directory to your theme-gem, please edit the regexp in `jekyll-t
 
 ### Creator
 
-**Enzo Di Resta**
+**drupix**
 
 - <https://drupal-solutions.ch>
 - <https://github.com/drupix>

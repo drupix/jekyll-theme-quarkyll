@@ -1,14 +1,30 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
 # Theme Settings
 #
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/#installing-the-theme
+
+# theme                  : "jekyll-theme-quarkyll"
+# remote_theme           : "drupix/jekyll-theme-quarkyll@0.1.0"
 
 # Theme options: (added as body class)
 theme_options: [
@@ -20,11 +36,11 @@ theme_options: [
   footer-dark,         # When enabled, a dark-friendly style will be used
 ]
 
-# Grid size: grid-sm, grid-md grid-lg
-grid-size       : grid-lg
-header-grid-size: grid-lg
+# Grid size: grid-sm, grid-md grid-lg grid-xl
+grid-size       : grid-xl
+header-grid-size: grid-xl
 
-# Other config
+# Site Settings
 # encoding        : "utf-8"
 locale          : "fr-CH"
 title           : "Quarkyll Theme"
@@ -53,6 +69,7 @@ url         : # the base hostname & protocol for your site e.g. "https://drupix.
 baseurl     : # the subpath of your site, e.g. "/blog"
 repository  :
 
+# Plugins (previously gems:)
 # plugins:
 #   - jekyll-menus
 
@@ -65,6 +82,34 @@ repository  :
   # - jekyll-feed
   # - jemoji
   # - jekyll-include-cache
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 
 # SEO Related
 # google_site_verification :
@@ -117,18 +162,20 @@ exclude:
   - /test # ignore Quarkyll /test
 
 # Conversion
-# markdown: kramdown
-# highlighter: rouge
-# lsi: false
-# excerpt_separator: "\n\n"
-# incremental: false
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
 
-# # Markdown Processing
-# kramdown:
-#   input: GFM
+# Markdown Processing
+#   see https://jekyllrb.com/docs/configuration/markdown/#custom-markdown-processors
+#   and https://kramdown.gettalong.org/options.html
+kramdown:
+  input: GFM
+  auto_ids: false
 #   hard_wrap: false
-#   auto_ids: true
 #   footnote_nr: 1
 #   entity_output: as_char
 #   toc_levels: 1..6
@@ -141,8 +188,8 @@ sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
-# # Outputting
-# permalink: /:categories/:title/
+# Outputting
+permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 # timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones

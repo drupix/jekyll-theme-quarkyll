@@ -1,0 +1,89 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign tags_max = 0 %}
+{% for tag in site.tags %}
+  {% if tag[1].size > tags_max %}
+    {% assign tags_max = tag[1].size %}
+  {% endif %}
+{% endfor %}
+
+<div class="filter taxonomy__index">
+  {% assign allPosts = site.posts | where_exp: "item", "item.hidden != true" %}
+
+  <input type="radio" id="tag-0" class="filter-tag" name="filter-radio" hidden checked>
+  {% for i in (1..tags_max) reversed %}
+    {% for tag in site.tags %}
+      {% if tag[1].size == i %}
+        <input type="radio" id="tag-{{ forloop.index }}" class="filter-tag" name="filter-radio" hidden>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  <div class="filter-nav">
+    <label class="chip chip-lg" for="tag-0">All<figure class="avatar avatar-right bg-dark" data-initial="{{ allPosts | size }}"></figure></label>
+    {% for i in (1..tags_max) reversed %}
+      {% for tag in site.tags %}
+        {% if tag[1].size == i %}
+          <label class="chip chip-lg" for="tag-{{ forloop.index }}">
+            {{ tag[0] }}
+            <figure class="avatar avatar-right bg-dark" data-initial="{{ i }}"></figure>
+          </label>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  {% assign items_layout = page.items_layout | default: 'list' %}
+  <div class="filter-body">
+    {% for i in (1..tags_max) reversed %}
+      {% for tag in site.tags %}
+        {% if tag[1].size == i %}
+          <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section filter-item" data-tag="tag-{{ forloop.index }}">
+            <h3 class="archive__subtitle"><i class="las la-folder-open" aria-hidden="true"></i> {{ tag[0] }}</h3>
+            <div class="entries-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
+              {% for post in tag.last %}
+                {% include archive-single.html type=items_layout %}
+              {% endfor %}
+            </div>
+            <a href="#start" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+          </section>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% comment %} <ul class="taxonomy__index columns">
+  {% for i in (1..tags_max) reversed %}
+    {% for tag in site.tags %}
+      {% if tag[1].size == i %}
+        <li class="column col-4 col-sm-6">
+          <a href="#{{ tag[0] | slugify }}">
+            <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+{% assign items_layout = page.items_layout | default: 'list' %}
+{% for i in (1..tags_max) reversed %}
+  {% for tag in site.tags %}
+    {% if tag[1].size == i %}
+      <section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
+        <h3 class="archive__subtitle"><i class="las la-tag" aria-hidden="true"></i>  {{ tag[0] }}</h3>
+        <div class="entries-{{ items_layout }}">
+          {% for post in tag.last %}
+            {% include archive-single.html type=items_layout %}
+          {% endfor %}
+        </div>
+        <a href="#start" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %} {% endcomment %}

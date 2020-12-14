@@ -1,0 +1,54 @@
+
+.author__avatar img {
+  max-width: 180px;
+  border-radius: 50%;
+}
+
+.archive__content {
+  .archive__item {
+    word-break: break-word;
+  }
+}
+
+.footnotes {
+  background: $gray-color-light;
+  padding: 0.4em;
+}
+
+.page__meta {
+  margin-top: 1.2rem;
+}
+.page__meta-sep::before {
+  content: "\2022";
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.taxonomy__section {
+  padding-top: 1.4em;
+}
+
+// Pagination
+.pagination {
+  .page-item {
+    &.btn {
+      padding: 0;
+      a {
+        &:active {
+          color: $btn-color;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: .4rem;
+    }
+    &.page-prev {
+      text-align: left;
+    }
+    &.page-next {
+      text-align: right;
+    }
+  }
+}

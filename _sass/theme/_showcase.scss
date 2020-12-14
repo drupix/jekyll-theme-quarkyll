@@ -1,13 +1,28 @@
 #showcase {
+  #to-start {
+    bottom: 3.5rem;
+  }
+  .showcase-caption {
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    padding: 0.2em 0.5em;
+    font-size: 0.9em;
 
-    background-image: url('../images/header.jpg');
-    //background-image: url('/sites/default/files/quark_showcase/header.jpg');
+    position: absolute;
+    //top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
-    .container {
-      // text-align: center;
-    }
-
-    #to-start {
-      bottom: 3.5rem;
+  &.caption-left {
+    .showcase-caption {
+      right: auto;
     }
   }
+  &.caption-right {
+    .showcase-caption {
+      left: auto;
+    }
+  }
+}

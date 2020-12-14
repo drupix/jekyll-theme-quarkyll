@@ -1,0 +1,12 @@
+// Chips
+.chip {
+  font-weight: bold;
+  margin: .1rem 1rem 1.0rem 0;
+  &.chip-lg {
+    height: $unit-8;
+  }
+  .avatar.avatar-right {
+    margin-left: $unit-1;
+    margin-right: -$unit-2;
+  }
+}
