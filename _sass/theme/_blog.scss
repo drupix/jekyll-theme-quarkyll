@@ -1,0 +1,8 @@
+//.sidebar {}
+.sidebar__left,
+.sidebar__right {
+  .sidebar-sticky {
+    position: sticky;
+    top: 100px;
+  }
+}

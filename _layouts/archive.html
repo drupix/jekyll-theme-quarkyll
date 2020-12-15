@@ -34,16 +34,15 @@ layout: default
         {%- assign side = 'second' -%}
       {%- endif -%}
       {% include sidebar.html side=side %}
-      {% comment %} {% include sidebar.html %} {% endcomment %}
     </aside>
   {%- endif -%}
 
-  <div class="archive {{ content_size }}">
+  <div class="archive {{ content_size }} order-lg-3">
     {{ content }}
   </div>
 
   {% if page.sidebar_second %}
-    <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %} {{ sidebar_second_size }}">
+    <aside class="sidebar__right column {{ sidebar_second_size }} order-lg-2">
       {%- assign side = 'second' -%}
       {% include sidebar.html side=side %}
     </aside>

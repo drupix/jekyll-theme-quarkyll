@@ -85,7 +85,6 @@ layout: default
               {%- assign side = 'second' -%}
             {%- endif -%}
             {% include sidebar.html side=side %}
-            {% comment %} {% include sidebar.html %} {% endcomment %}
           </aside>
         {%- endif -%}
 
@@ -113,9 +112,9 @@ layout: default
         </div>
 
         {% if page.toc or page.sidebar_second %}
-          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %} {{ sidebar_second_size }} order-lg-2">
+          <aside class="sidebar__right column {{ sidebar_second_size }} order-lg-2">
             {% if page.toc %}
-              <nav class="toc">
+              <nav class="toc {% if page.toc_sticky %}sidebar-sticky{% endif %}">
                 <header>
                   <h4 class="nav__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
                 </header>
