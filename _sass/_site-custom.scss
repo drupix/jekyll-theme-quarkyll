@@ -4,9 +4,23 @@
   border-radius: 50%;
 }
 
-.archive__content {
+.archive__content,
+.page__related {
   .archive__item {
     word-break: break-word;
+    &.card {
+      -webkit-transition: all .3s ease-out;
+              transition: all .3s ease-out;
+
+      .card-title {
+        &.h3 {
+          line-height: 1.2;
+        }
+      }
+      &:hover {
+        @include shadow-variant(.2rem);
+      }
+    }
   }
 }
 

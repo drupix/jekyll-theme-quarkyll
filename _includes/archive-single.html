@@ -21,21 +21,27 @@
   {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
 {% endif %}
 
-<div class="{{ include.type | default: 'list' }}__item {% if include.type == 'grid' %}column {{ grid_class }}{% endif %}">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+<div class="{{ include.type | default: 'list' }}__item {% if include.type == 'grid' %}column {{ grid_class }}{% endif %} mt-2 mb-2">
+  <article class="archive__item card" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
+      <div class="archive__item-teaser card-image">
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
     {% endif %}
-    <h3 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="las la-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h3>
-    {% include page__meta.html type=include.type %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    <div class="card-header">
+      {% comment %} <h3 class="archive__item-title card-title no_toc" itemprop="headline"> {% endcomment %}
+      <div class="archive__item-title card-title h3 no_toc" itemprop="headline">
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="las la-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      </div>
+      {% comment %} </h3> {% endcomment %}
+      <div class="card-subtitle">
+        {% include page__meta.html type=include.type %}
+      </div>
+    </div>
+    {% if post.excerpt %}<p class="archive__item-excerpt card-body" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
