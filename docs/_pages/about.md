@@ -9,7 +9,7 @@ permalink: "/about/"
 #     title: About
 #     weight: 2
 #     identifier: about
-#     hide-in-nav: false
+#     hide_in_nav: false
 ---
 
 ## ...and my first Jekyll Theme

@@ -33,7 +33,7 @@ showcase:
 #     title: Home
 #     weight: 1
 #     identifier: home
-#     hide-in-nav: false
+#     hide_in_nav: false
 ---
 
 ### **Jekyll + Quark = Quarkyll<i class="la la-gem pulse red"></i><br>Optimized for search engines and blablabla...**

@@ -4,12 +4,12 @@
 {%- if menu -%}
   <ul class="{{ menu_class }} {% if tree %}tree{% endif %}">
   {%- for item in menu -%}
-    {%- if item.hide-in-nav != true -%}
+    {%- if item.hide_in_nav != true -%}
       <li class="menu-item">
         {%- assign menu_link = item.url -%}
-        {%- if item.children -%}
+        {% comment %} {%- if item.children -%}
           {%- assign menu_link = '#' -%}
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
         <a class="{% if item.url == page.url %}active{% endif %}"
           href="{{ menu_link | relative_url }}"
           title="{{ item.title }}">{{ item.title }}</a>

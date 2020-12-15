@@ -31,6 +31,11 @@
 
 .page__meta {
   margin-top: 1.2rem;
+  &.grid {
+    .page__meta--item {
+      display: block;
+    }
+  }
 }
 .page__meta-sep::before {
   content: "\2022";
