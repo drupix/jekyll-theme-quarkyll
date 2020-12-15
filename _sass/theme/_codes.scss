@@ -1,0 +1,82 @@
+// Spectre Codes override
+.code {
+  color: darken($highlight-code-color, 5%);
+
+  &::before {
+    //color: darken($highlight-code-color, 5%);
+    font-weight: bold;
+  }
+
+  code {
+    background: $highlight-code-bg-color;
+    color: darken($highlight-code-color, 5%);
+  }
+}
+
+// Quark Codeblocks override
+pre code,
+pre.xdebug-var-dump{
+  background: $highlight-code-bg-color;
+  color: darken($highlight-code-color, 5%);
+}
+
+pre {
+  code:not(.hljs):not([class*="language-"]) {
+    background: $highlight-code-bg-color;
+    color: darken($highlight-code-color, 5%);
+  }
+}
+
+.highlight {
+  table {
+    td {
+      padding: 0;
+    }
+    td.gutter,
+    td.rouge-gutter {
+      padding-right: 1em;
+      color: $highlight-code-gutter-color;
+      border-right: 1px solid $highlight-code-gutter-color;
+      text-align: right;
+    }
+    td.code,
+    td.rouge-code {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+}
+
+figure.highlight {
+  margin: 1em 0;
+  pre {
+    margin: 0;
+    padding: 0;
+    background: $highlight-code-bg-color;
+    code {
+      color: darken($highlight-code-color, 5%);
+      background: inherit;
+      position: relative;
+      &::before {
+        color: $gray-color;
+        content: attr(data-lang);
+        font-size: $font-size-sm;
+        font-weight: bold;
+        position: absolute;
+        right: $layout-spacing;
+        top: $unit-h;
+      }
+    }
+  }
+}
+.highlighter-rouge {
+  clear:both;
+  margin: 1em 0;
+  .highlight pre { background-color: $highlight-code-bg-color; }
+  .highlight .hll { background-color: $highlight-code-bg-color; }
+  pre {
+    code {
+      color: darken($highlight-code-color, 5%);
+    }
+  }
+}

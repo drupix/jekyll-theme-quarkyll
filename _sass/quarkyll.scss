@@ -18,6 +18,7 @@
 @import 'theme/menu';
 // // @import 'theme/qk_spectre';
 @import 'theme/typography';
+@import "theme/codes";
 @import "theme/media";
 // // @import 'theme/qk_forms';
 @import 'theme/mobile';
@@ -42,10 +43,9 @@
 // // @import 'theme/qk_nivo_slider';
 
 // Site custom
+// TODO: move  file content to appropriate sub files
 @import 'site-custom';
 
-// Pygments override
-@import 'theme/pygments';
-
-// Pygments core
+// Highlights - Pygments core
+//   - see in theme/_codes.scss for overrides
 @import 'pygments/monokai';
