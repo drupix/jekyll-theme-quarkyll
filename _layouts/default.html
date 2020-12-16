@@ -42,9 +42,9 @@
                                 {% include sidebar.html side=side %}
                             </div>
                             {%- endif -%}
-                            <div id="content-region" class="XXX-column {{ content_size }} XXX-col-md-12">
+                            <div id="content-region" class="XXX-column {{ content_size }} XXX-col-md-12 {% if page.hide_title %}title-hidden{% endif %}">
                                 {%- if page.hide_title != true -%}
-                                    <h1 class="page-title {{ page.classes }}{% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+                                    <h1 class="page-title {% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
                                 {%- endif -%}
                                 {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
 
