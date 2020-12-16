@@ -1,3 +1,8 @@
+#content-region {
+  &.title-hidden {
+    margin-top: 2rem;
+  }
+}
 
 .author__avatar img {
   max-width: 180px;
@@ -30,7 +35,7 @@
 }
 
 .page__meta {
-  margin-top: 1.2rem;
+  padding-top: 1.2rem;
   &.grid {
     .page__meta--item {
       display: block;
@@ -42,6 +47,9 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
+.page__share {
+  padding-bottom: 2rem;
+}
 
 .taxonomy__section {
   padding-top: 1.4em;
@@ -49,6 +57,7 @@
 
 // Pagination
 .pagination {
+  padding-bottom: 2rem;
   .page-item {
     &.btn {
       padding: 0;

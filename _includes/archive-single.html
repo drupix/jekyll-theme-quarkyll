@@ -12,17 +12,22 @@
 
 {% assign grid_size = include.grid_size | default: 3 %}
 {% if grid_size == 2 %}
-  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
+  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4 mt-2 mb-2" %}
 {% elsif grid_size == 3 %}
-  {% assign grid_class = "col-4 col-xs-12 col-sm-6 col-md-3" %}
+  {% assign grid_class = "col-4 col-xs-12 col-sm-6 col-md-3 mt-2 mb-2" %}
 {% elsif grid_size == 4 %}
-  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
+  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4 mt-2 mb-2" %}
 {% else %}
-  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4" %}
+  {% assign grid_class = "col-3 col-xs-12 col-sm-6 col-md-4 mt-2 mb-2" %}
 {% endif %}
 
-<div class="{{ include.type | default: 'list' }}__item {% if include.type == 'grid' %}column {{ grid_class }}{% endif %} mt-2 mb-2">
-  <article class="archive__item card" itemscope itemtype="https://schema.org/CreativeWork">
+{% assign card_class = 'card' %}
+{% if include.type == 'list' or include.card == false %}
+  {% assign card_class = '' %}
+{% endif %}
+
+<div class="{{ include.type | default: 'list' }}__item {% if include.type == 'grid' %}column {{ grid_class }}{% endif %}">
+  <article class="archive__item {{ card_class }} {% if include.classes %}{{ include.classes }}{% endif %}" itemscope itemtype="https://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser card-image">
         <img src="{{ teaser | relative_url }}" alt="">

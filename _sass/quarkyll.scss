@@ -40,12 +40,13 @@
 @import 'theme/blockquote';
 @import 'theme/alert';
 @import 'theme/tabs';
+@import 'theme/utilities';
 // // @import 'theme/qk_footer_four_columns';
 // // @import 'theme/qk_nivo_slider';
 
 // Site custom
 // TODO: move  file content to appropriate sub files
-@import 'site-custom';
+@import '_site-custom';
 
 // Highlights - Pygments core
 //   - see in theme/_codes.scss for overrides
