@@ -71,14 +71,15 @@ baseurl     : "/jekyll-theme-quarkyll" # the subpath of your site, e.g. "/blog"
 repository  : "drupix/jekyll-theme-quarkyll"
 
 # Plugins (previously gems:)
-# plugins:
+plugins:
+  - jekyll-sitemap
 #   - jekyll-menus
 
 # mimic GitHub Pages with --safe
-# whitelist:
+whitelist:
+  - jekyll-sitemap
 #   - jekyll-menus
   # - jekyll-paginate
-  # - jekyll-sitemap
   # - jekyll-gist
   # - jekyll-feed
   # - jemoji
