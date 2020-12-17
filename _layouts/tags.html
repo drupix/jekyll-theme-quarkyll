@@ -49,7 +49,7 @@ layout: archive
                 {% include archive-single.html type=items_layout %}
               {% endfor %}
             </div>
-            <a href="#start" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+            {% include back-to-top.html %}
           </section>
         {% endif %}
       {% endfor %}
