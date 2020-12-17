@@ -137,7 +137,7 @@ social_media:
   links:
     - title: "Say Hello"
       icon: 'la la-envelope'
-      url: "mailto:enzo@drupal-solutions.ch"
+      url: "mailto:john.doe@example.com"
     - title: "Drupal"
       icon: 'lab la-drupal'
       url: "https://www.drupal.org/u/drupix"
