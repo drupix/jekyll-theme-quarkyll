@@ -1,13 +1,13 @@
-{%- if site.data.social-media -%}
+{% if site.social_media.links %}
 <ul class="social-media-list">
-    {%- assign sm = site.data.social-media -%}
-    {%- for entry in sm -%}
-        {%- assign key = entry | first -%}
-        {%- if sm[key].id -%}
-            <li>
-                <a target="_blank" href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}" rel="noreferrer"><i class="{{ sm[key].icon }}"></i></a>
-            </li>
-        {%- endif -%}
-    {%- endfor -%}
+  {% for link in site.social_media.links %}
+    {% if link.url %}
+      <li>
+        <a target="_blank" href="{{ link.url }}" title="{{ link.title }}" rel="nofollow noopener noreferrer">
+          <i class="{{ link.icon | default: 'las la-link' }}" aria-hidden="true"></i>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>
-{%- endif -%}
+{% endif %}
