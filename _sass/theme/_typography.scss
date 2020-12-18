@@ -83,6 +83,31 @@ p.notices {
   text-transform: uppercase;
 }
 
+.back-to-top {
+  margin: 1rem 0;
+  .to-top {
+    color: $link-color;
+    padding: 0.2rem 0;
+
+    &:focus {
+      @include control-shadow();
+    }
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      color: $link-color-dark;
+      text-decoration: underline;
+    }
+  }
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+
 // Icon Tweaks
 i.la,
 i.las,

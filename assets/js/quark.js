@@ -56,7 +56,4 @@ jQuery(document).ready(function($){
     // Tree Menu
     $(".tree").treemenu({delay:300});
 
-    // Add active class to parent menu item
-    var pMenu = $('.main-menu .menu-item a.active').parent().parent().parent();
-    pMenu.children('a').addClass('active');
 });
