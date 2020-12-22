@@ -2,6 +2,12 @@
   z-index: 0;
 }
 
+#content-region {
+  &.title-hidden {
+    margin-top: 2rem;
+  }
+}
+
 // Hero
 .hero {
   .header-fixed & {
@@ -17,4 +23,47 @@
   h2 {
     font-size: 1.8rem;
   }
+}
+
+.archive__content,
+.page__related {
+  .archive__item {
+    //word-break: break-word;
+    &.card {
+      -webkit-transition: all .3s ease-out;
+              transition: all .3s ease-out;
+
+      .card-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &.h3 {
+          line-height: 1.2;
+        }
+      }
+      &:hover {
+        @include shadow-variant(.2rem);
+      }
+    }
+  }
+}
+
+.page__meta {
+  padding-top: 1.2rem;
+  &.grid {
+    .page__meta--item {
+      display: block;
+    }
+  }
+}
+.page__meta-sep::before {
+  content: "\2022";
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.page__share {
+  padding-bottom: 2rem;
+}
+
+.taxonomy__section {
+  padding-top: 1.4em;
 }

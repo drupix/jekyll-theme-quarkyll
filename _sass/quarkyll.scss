@@ -17,7 +17,6 @@
 @import 'theme/features';
 @import 'theme/menu';
 @import 'theme/blog';
-// // @import 'theme/qk_spectre';
 @import 'theme/typography';
 @import "theme/codes";
 @import "theme/media";
@@ -31,10 +30,12 @@
 // // @import 'theme/qk_regions';
 @import 'theme/front';
 @import 'theme/showcase';
+@import 'theme/author_profile';
 @import 'theme/labels';
 @import 'theme/badges';
 @import "theme/chips";
 @import "theme/filters";
+@import "theme/pagination";
 @import 'theme/progress';
 @import 'theme/wells';
 @import 'theme/buttons';
@@ -43,11 +44,6 @@
 @import 'theme/tabs';
 @import 'theme/utilities';
 // // @import 'theme/qk_footer_four_columns';
-// // @import 'theme/qk_nivo_slider';
-
-// Site custom
-// TODO: move  file content to appropriate sub files
-@import '_site-custom';
 
 // Highlights - Pygments core
 //   - see in theme/_codes.scss for overrides

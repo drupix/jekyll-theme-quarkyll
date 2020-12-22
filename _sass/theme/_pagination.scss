@@ -1,0 +1,25 @@
+// Pagination
+.pagination {
+  padding-bottom: 2rem;
+  .page-item {
+    &.btn {
+      padding: 0;
+      a {
+        &:active {
+          color: $btn-color;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: .4rem;
+    }
+    &.page-prev {
+      text-align: left;
+    }
+    &.page-next {
+      text-align: right;
+    }
+  }
+}
