@@ -18,6 +18,14 @@
   {% endif %}
 {% endif %}
 
+{% assign caption_color = page.showcase.caption_color | default: '#FFFFFF' %}
+{% assign caption_background = page.showcase.caption_background | default: '#000000' %}
+{% assign caption_opacity = page.showcase.caption_opacity | default: 0.6 %}
+{%- capture caption_style -%}
+  background: {{ caption_background }}; color: {{ caption_color }}; opacity: {{ caption_opacity }};
+{%- endcapture -%}
+
+
 <section id="showcase" class="section hero {{ page.showcase.classes | join: " " }}" {% if page.showcase.image %}style="background-image: url({{image_path}});"{% endif %}>
   <div class="image-overlay" {% if page.showcase.overlay_color %} style="{{ overlay_style }}" {% endif %}></div>
   <section class="container {{ site.grid-size | default: "grid-lg" }}" style="text-align: center">
@@ -39,12 +47,18 @@
       {% comment %} <p>{{ el | markdownify }}</p> {% endcomment %}
       {{ el | markdownify }}
     {%- endfor -%}
+    {% if page.showcase.actions %}
+      {% comment %} <p> {% endcomment %}
+      {% for action in page.showcase.actions %}
+        <a href="{{ action.url | relative_url }}" class="btn btn-primary  btn-lg">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
+      {% endfor %}
+    {% endif %}
   </section>
   {%- if page.showcase.to_start != false -%}
     <i id="to-start" class="pulse la la-angle-down"></i>
   {%- endif -%}
   {%- if page.showcase.image and page.showcase.caption -%}
     {% assign caption_align = page.showcase.caption_align | default: 'center' %}
-    <span class="showcase-caption {% if caption_align %}text-{{caption_align}}{% endif %}">{{ page.showcase.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+    <span class="showcase-caption {% if caption_align %}text-{{caption_align}}{% endif %}" style="{{ caption_style }}">{{ page.showcase.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
   {%- endif -%}
 </section>
