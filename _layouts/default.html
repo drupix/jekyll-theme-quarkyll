@@ -10,86 +10,84 @@
     {% include head.html %}
 </head>
 <body id="top" class="{{ page.classes | default: "" }} {% if page.showcase %}showcase{% endif %} {{ site.theme_options | join: " " }}">
-    <div id="page-wrapper">
-        {%- include header.html -%}
-        {%- if page.showcase -%}
-            {%- if page.showcase.video -%}
-                {%- include showcase_video.html -%}
-            {%- else -%}
-                {%- include showcase.html -%}
-            {%- endif -%}
+  <div id="page-wrapper">
+    {%- include header.html -%}
+    {%- if page.showcase -%}
+        {%- if page.showcase.video -%}
+            {%- include showcase_video.html -%}
+        {%- else -%}
+            {%- include showcase.html -%}
         {%- endif -%}
-        <section id="start">
-            <section {% if page.showcase == "" or page.showcase == nil %}id="body-wrapper"{% endif %} class="section home-content offset-box">
-                <section class="container {{ site.grid-size | default: "grid-lg" }}">
-                    <div class="frame-box">
-                        <div class="XXX-columns">
-                            {%- assign content_size = 'col-12' -%}
-                            {%- assign content_size = '' -%}
-                            {%- assign show_sidebar = false -%}
+    {%- endif -%}
+    <section id="start">
+      <section {% if page.showcase == "" or page.showcase == nil %}id="body-wrapper"{% endif %} class="section home-content offset-box">
+        <section class="container {{ site.grid-size | default: "grid-lg" }}">
+          <div class="frame-box">
+            {%- assign content_size = 'col-12' -%}
+            {%- assign content_size = '' -%}
+            {%- assign show_sidebar = false -%}
 
-                            {%- if show_sidebar and page.sidebar_first != null and page.sidebar_second != null -%}
-                                {%- assign content_size = 'col-6' -%}
-                            {%- elsif show_sidebar and page.sidebar_first != null -%}
-                                {%- assign content_size = 'col-9' -%}
-                            {%- elsif show_sidebar and page.sidebar_second != null -%}
-                                {%- assign content_size = 'col-9' -%}
-                            {%- endif -%}
+            {%- if show_sidebar and page.sidebar_first != null and page.sidebar_second != null -%}
+              {%- assign content_size = 'col-6' -%}
+            {%- elsif show_sidebar and page.sidebar_first != null -%}
+              {%- assign content_size = 'col-9' -%}
+            {%- elsif show_sidebar and page.sidebar_second != null -%}
+              {%- assign content_size = 'col-9' -%}
+            {%- endif -%}
 
-                            {%- if show_sidebar and page.sidebar_first != null -%}
-                            <div id="sidebar-first-region" class="XXX-column XXX-col-3 XXX-col-md-12">
-                                {%- assign side = 'first' -%}
-                                {% include sidebar.html side=side %}
-                            </div>
-                            {%- endif -%}
-                            <div id="content-region" class="XXX-column {{ content_size }} XXX-col-md-12 {% if page.hide_title %}title-hidden{% endif %}">
-                                {%- if page.hide_title != true -%}
-                                    <h1 class="page-title {% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
-                                {%- endif -%}
-                                {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+            {%- if show_sidebar and page.sidebar_first != null -%}
+              <div id="sidebar-first-region">
+                {%- assign side = 'first' -%}
+                {% include sidebar.html side=side %}
+              </div>
+            {%- endif -%}
+            <div id="content-region" class="{{ content_size }} {% if page.hide_title %}title-hidden{% endif %}">
+              {%- if page.hide_title != true -%}
+                <h1 class="page-title {% if page.subtitle == nil %} no-subtitle{% endif %}">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+              {%- endif -%}
+              {% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
 
-                                {%- if page.layout == 'home' -%}
-                                    {{ content }}
-                                    {%- include features.html -%}
-                                {%- else -%}
-                                    {{ content }}
-                                {%- endif -%}
-                            </div>
-                            {%- if show_sidebar and page.sidebar_second != null -%}
-                            <div id="sidebar-second-region" class="XXX-column XXX-col-3 XXX-col-md-12">
-                                {%- assign side = 'second' -%}
-                                {% include sidebar.html side=side %}
-                            </div>
-                            {%- endif -%}
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </section>
-    </div>
-
-    {% include pre-footer.html %}
-    {% include footer.html %}
-
-    <div class="mobile-container">
-        <div class="overlay" id="overlay">
-            <div class="mobile-logo">
-                {% include logo.html %}
+              {%- if page.layout == 'home' -%}
+                {{ content }}
+                {%- include features.html -%}
+              {%- else -%}
+                {{ content }}
+              {%- endif -%}
             </div>
-            <nav class="overlay-menu">
-                {%- if site.data.menus and site.data.menus.header -%}
-                    {%- assign menu = site.data.menus.header | sort: 'weight' -%}
-                {%- endif -%}
-                {%- assign menu_class = 'main-menu' -%}
-                {%- assign tree = true -%}
-                {% include menus.html %}
-            </nav>
-        </div>
-    </div>
+            {%- if show_sidebar and page.sidebar_second != null -%}
+              <div id="sidebar-second-region">
+                {%- assign side = 'second' -%}
+                {% include sidebar.html side=side %}
+              </div>
+            {%- endif -%}
+          </div>
+        </section>
+      </section>
+    </section>
+  </div>
 
-    <script src="{{ "/assets/js/quarkyll-bootstrap.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/plugins/jquery.treemenu.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/quark.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/quarkyll.js" | relative_url }}"></script>
+  {% include pre-footer.html %}
+  {% include footer.html %}
+
+  <div class="mobile-container">
+    <div class="overlay" id="overlay">
+      <div class="mobile-logo">
+        {% include logo.html %}
+      </div>
+      <nav class="overlay-menu">
+        {%- if site.data.menus and site.data.menus.header -%}
+          {%- assign menu = site.data.menus.header | sort: 'weight' -%}
+        {%- endif -%}
+        {%- assign menu_class = 'main-menu' -%}
+        {%- assign tree = true -%}
+        {% include menus.html %}
+      </nav>
+    </div>
+  </div>
+
+  <script src="{{ "/assets/js/quarkyll-bootstrap.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/plugins/jquery.treemenu.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/quark.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/quarkyll.js" | relative_url }}"></script>
 </body>
 </html>
