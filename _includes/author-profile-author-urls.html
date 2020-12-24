@@ -1,0 +1,19 @@
+<ul class="author__urls social-icons {{include.type}}">
+  {% if author.location %}
+    <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+      <i class="las la-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ author.location }}</span>
+    </li>
+  {% endif %}
+
+  {% if author.links %}
+    {% for link in author.links %}
+      {% if link.label and link.url %}
+        <li>
+          <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
+            <i class="{{ link.icon | default: 'las la-link' }}" aria-hidden="true"></i><span class="link-label">{{ link.label }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</ul>
