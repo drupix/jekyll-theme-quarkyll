@@ -24,25 +24,21 @@
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
 {%- endif -%}
 
-{%- comment -%}
-  {%- assign author = page.author | default: page.authors[0] | default: site.author -%}
-  {%- assign author = site.data.authors[author] | default: author -%}
+{%- assign author = page.author | default: page.authors[0] | default: site.author -%}
+{%- assign author = site.data.authors[author] | default: author -%}
 
-  {%- if author.twitter -%}
-    {%- assign author_twitter = author.twitter | replace: "@", "" -%}
-  {%- endif -%}
-{%- endcomment -%}
+{%- if author.twitter -%}
+  {%- assign author_twitter = author.twitter | replace: "@", "" -%}
+{%- endif -%}
 
-{%- comment -%}
-  {%- assign page_large_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | absolute_url -%}
-  {%- assign page_large_image = page_large_image | escape -%}
+{%- assign page_large_image = page.showcase.og_image | default: page.showcase.image | absolute_url -%}
+{%- assign page_large_image = page_large_image | escape -%}
 
-  {%- assign page_teaser_image = page.header.teaser | default: site.og_image | absolute_url -%}
-  {%- assign page_teaser_image = page_teaser_image | escape -%}
+{%- assign page_teaser_image = page.teaser.og_image | default: page.teaser.image | default: site.og_image | absolute_url -%}
+{%- assign page_teaser_image = page_teaser_image | escape -%}
 
-  {%- assign site_og_image = site.og_image | absolute_url -%}
-  {%- assign site_og_image = site_og_image | escape -%}
-{%- endcomment -%}
+{%- assign site_og_image = site.og_image | absolute_url -%}
+{%- assign site_og_image = site_og_image | escape -%}
 
 {%- if page.date -%}
   {%- assign og_type = "article" -%}
@@ -55,9 +51,9 @@
 
 {% if author.name %}
   <meta name="author" content="{{ author.name | default: author }}">
-  {%- if og_type == "article" -%}
-  <meta property="article:author" content="{{ author.name | default: author }}">
-  {%- endif -%}
+  {% if og_type == "article" %}
+    <meta property="article:author" content="{{ author.name | default: author }}">
+  {% endif %}
 {% endif %}
 
 <meta property="og:type" content="{{ og_type }}">
@@ -69,37 +65,32 @@
 {% if seo_description %}
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
+{%- if page_large_image -%}
+  <meta property="og:image" content="{{ page_large_image }}">
+{%- elsif page_teaser_image -%}
+  <meta property="og:image" content="{{ page_teaser_image }}">
+{%- endif -%}
 
-{%- comment -%}
-  {%- if page_large_image -%}
-    <meta property="og:image" content="{{ page_large_image }}">
-  {%- elsif page_teaser_image -%}
-    <meta property="og:image" content="{{ page_teaser_image }}">
+{% if site.twitter.username %}
+  <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
+  <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  <meta name="twitter:description" content="{{ seo_description }}">
+  <meta name="twitter:url" content="{{ canonical_url }}">
+
+  {% if page_large_image %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ page_large_image }}">
+  {% else %}
+    <meta name="twitter:card" content="summary">
+    {% if page_teaser_image %}
+      <meta name="twitter:image" content="{{ page_teaser_image }}">
+    {% endif %}
+  {% endif %}
+
+  {%- if author_twitter -%}
+    <meta name="twitter:creator" content="@{{ author_twitter }}">
   {%- endif -%}
-{%- endcomment -%}
-
-{%- comment -%}
-  {%- if site.twitter.username -%}
-    <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
-    <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
-    <meta name="twitter:description" content="{{ seo_description }}">
-    <meta name="twitter:url" content="{{ canonical_url }}">
-
-    {%- if page_large_image -%}
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="{{ page_large_image }}">
-    {%- else -%}
-      <meta name="twitter:card" content="summary">
-      {%- if page_teaser_image -%}
-        <meta name="twitter:image" content="{{ page_teaser_image }}">
-      {%- endif -%}
-    {%- endif -%}
-
-    {%- if author_twitter -%}
-      <meta name="twitter:creator" content="@{{ author_twitter }}">
-    {%- endif -%}
-  {%- endif -%}
-{%- endcomment -%}
+{% endif %}
 
 {% if page.date %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
@@ -109,26 +100,23 @@
   <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
 {% endif %}
 
-{%- comment -%}
-  {%- if site.facebook -%}
-    {%- if site.facebook.publisher -%}
-      <meta property="article:publisher" content="{{ site.facebook.publisher }}">
-    {%- endif -%}
-
-    {%- if site.facebook.app_id -%}
-      <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
-    {%- endif -%}
+{%- if site.facebook -%}
+  {%- if site.facebook.publisher -%}
+    <meta property="article:publisher" content="{{ site.facebook.publisher }}">
   {%- endif -%}
-{%- endcomment -%}
+
+  {%- if site.facebook.app_id -%}
+    <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
+  {%- endif -%}
+{%- endif -%}
 
 <link rel="canonical" href="{{ canonical_url }}">
 
-{% if paginator.previous_page %}
-  <link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">
+{% if page.previous %}
+  <link rel="prev" href="{{ page.previous.url | absolute_url }}">
 {% endif %}
-
-{% if paginator.next_page %}
-  <link rel="next" href="{{ paginator.next_page_path | absolute_url }}">
+{% if page.next %}
+  <link rel="next" href="{{ page.next.url | absolute_url }}">
 {% endif %}
 
 {%- comment -%}
@@ -149,7 +137,6 @@
 </script>
 {%- endcomment -%}
 
-{%- comment -%}
 {%- if site.google_site_verification -%}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
 {%- endif -%}
@@ -165,4 +152,3 @@
 {%- if site.naver_site_verification -%}
   <meta name="naver-site-verification" content="{{ site.naver_site_verification }}">
 {%- endif -%}
-{%- endcomment -%}
