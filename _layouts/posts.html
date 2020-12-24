@@ -4,38 +4,27 @@ layout: archive
 
 {{ content }}
 
-<div class="filter">
+<div class="taxonomy__index filters">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-  {% assign allPosts = site.posts | where_exp: "item", "item.hidden != true" %}
-
-  <input type="radio" id="tag-0" class="filter-tag" name="filter-radio" hidden checked>
   {% for year in postsInYear %}
-    <input type="radio" id="tag-{{ forloop.index }}" class="filter-tag" name="filter-radio" hidden>
+    <a href="#year-{{ year.name }}" class="chip chip-lg filter--item">
+      {{ year.name }}
+      <figure class="avatar avatar-right bg-dark" data-initial="{{ year.items | size }}"></figure>
+    </a>
   {% endfor %}
-
-  <div class="filter-nav">
-    <label class="chip chip-lg" for="tag-0">All<figure class="avatar avatar-right bg-dark" data-initial="{{ allPosts | size }}"></figure></label>
-    {% for year in postsInYear %}
-      <label class="chip chip-lg" for="tag-{{ forloop.index }}">
-        {{ year.name }}
-        <figure class="avatar avatar-right bg-dark" data-initial="{{ year.items | size }}"></figure>
-      </label>
-    {% endfor %}
-  </div>
-
-  {% assign items_layout = page.items_layout | default: 'list' %}
-  {% assign postsByYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-  <div class="filter-body">
-    {% for year in postsByYear %}
-      <section id="year-{{ year.name }}" class="filter-item" data-tag="tag-{{ forloop.index }}">
-        <h3 class="archive__subtitle">{{ year.name }}</h3>
-        <div class="entries-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
-          {% for post in year.items %}
-            {% include archive-single.html type=items_layout %}
-          {% endfor %}
-        </div>
-        {% include back-to-top.html %}
-      </section>
-    {% endfor %}
-  </div>
 </div>
+
+{% assign items_layout = page.items_layout | default: 'list' %}
+{% assign postsByYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+
+{% for year in postsByYear %}
+  <section id="year-{{ year.name }}" class="taxonomy__section">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <div class="items-{{ items_layout }} {% if items_layout == 'grid' %}columns{% endif %}">
+      {% for post in year.items %}
+        {% include archive-single.html type=items_layout %}
+      {% endfor %}
+    </div>
+    {% include back-to-top.html %}
+  </section>
+{% endfor %}

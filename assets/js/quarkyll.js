@@ -1,15 +1,14 @@
 jQuery(document).ready(function($){
 
-    //Smooth scroll to top
+    // Smooth scroll to top
     $('.to-top').click(function(){
         window.scroll({ top: 0, left: 0, behavior: 'smooth' });
         return false;
     });
 
-    //Smooth scroll to footnotes
-    $('.footnote').click(function(){
+    // Smooth scroll to taxonomy__section
+    $('.taxonomy__index .filter--item').click(function(){
         var header_offset = 45;
-        //var footnotes_y = $('.footnotes').offset().top;
         var toId = $(this).attr("href");
         toId = toId.replace(/:/g, "\\:");
         var toTop = $(toId).offset().top;
@@ -17,6 +16,17 @@ jQuery(document).ready(function($){
         return false;
     });
 
+    // Smooth scroll to footnotes
+    $('.footnote').click(function(){
+        var header_offset = 45;
+        var toId = $(this).attr("href");
+        toId = toId.replace(/:/g, "\\:");
+        var toTop = $(toId).offset().top;
+        window.scroll({ top: toTop - header_offset, left: 0, behavior: 'smooth' });
+        return false;
+    });
+
+    // Smooth scroll to notes
     $('.reversefootnote').click(function(){
         var header_offset = 45;
         var toId = $(this).attr("href");
