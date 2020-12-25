@@ -64,6 +64,9 @@
         </section>
       </section>
     </section>
+    {%- if page.id and page.related -%}
+      {%- include section-related.html -%}
+    {%- endif -%}
   </div>
 
   {% include pre-footer.html %}

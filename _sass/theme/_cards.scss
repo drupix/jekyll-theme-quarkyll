@@ -1,0 +1,15 @@
+.card {
+  -webkit-transition: all .3s ease-out;
+          transition: all .3s ease-out;
+
+  .card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.h3 {
+      line-height: 1.2;
+    }
+  }
+  &:hover {
+    @include shadow-variant(.2rem);
+  }
+}

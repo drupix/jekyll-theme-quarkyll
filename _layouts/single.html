@@ -43,101 +43,77 @@ layout: default
 {% comment %} <div id="main" role="main"> {% endcomment %}
   {% comment %} {% include sidebar.html %} {% endcomment %}
 
-  <article class="page {% if page.type %}page--{{ page.type }}{% endif %}" itemscope itemtype="https://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+<article class="page {% if page.type %}page--{{ page.type }}{% endif %}" itemscope itemtype="https://schema.org/CreativeWork">
+  {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+  {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+  {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+  {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
-    <div class="page__inner-wrap">
-      <section class="page__content {% if page.toc or page.author_profile or layout.author_profile or page.sidebar_first or page.sidebar_second %}columns{% endif %}" itemprop="text">
-        {% if page.author_profile or layout.author_profile or page.sidebar_first %}
-          <aside class="sidebar__left column {{ sidebar_first_size }} order-md-1 {{ sidebar_first_class }}">
-            {%- assign side = false -%}
-            {% if page.sidebar_first %}
-              {%- assign side = 'first' -%}
-            {% elsif page.sidebar_second %}
-              <!-- TODO: Check here -->
-              {%- assign side = 'second' -%}
-            {%- endif -%}
-            {% include sidebar.html side=side %}
-          </aside>
+  <div class="page__inner-wrap">
+    <section class="page__content {% if page.toc or page.author_profile or layout.author_profile or page.sidebar_first or page.sidebar_second %}columns{% endif %}" itemprop="text">
+      {% if page.author_profile or layout.author_profile or page.sidebar_first %}
+        <aside class="sidebar__left column {{ sidebar_first_size }} order-md-1 {{ sidebar_first_class }}">
+          {%- assign side = false -%}
+          {% if page.sidebar_first %}
+            {%- assign side = 'first' -%}
+          {% elsif page.sidebar_second %}
+            <!-- TODO: Check here -->
+            {%- assign side = 'second' -%}
+          {%- endif -%}
+          {% include sidebar.html side=side %}
+        </aside>
+      {%- endif -%}
+
+      <div class="{{ content_size }} order-lg-3">
+        {%- if  page.showcase.metas != true -%}
+          {% include page__meta.html %}
         {%- endif -%}
 
-        <div class="{{ content_size }} order-lg-3">
-          {%- if  page.showcase.metas != true -%}
-            {% include page__meta.html %}
-          {%- endif -%}
+        {{ content }}
 
-          {{ content }}
-
-          {% if page.link %}
-            <div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
-          {% endif %}
-
-          <section class="page__meta mb-4">
-            {% if site.data.ui-text[site.locale].meta_label %}
-              <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-            {% endif %}
-            {% include page__taxonomy.html %}
-            {% include page__date.html %}
-          </section>
-
-          {% if page.share %}{% include social-share.html %}{% endif %}
-
-          {% include post_pagination.html %}
-        </div>
-
-        {% if page.toc or page.sidebar_second %}
-          <aside class="sidebar__right column {{ sidebar_second_size }} order-lg-2">
-            {% if page.toc %}
-              <nav class="toc {% if page.toc_sticky %}sidebar-sticky{% endif %}">
-                <header>
-                  <h4 class="nav__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
-                </header>
-                {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
-              </nav>
-            {% endif %}
-            {% if page.sidebar_second %}
-              {%- assign side = 'second' -%}
-              {% include sidebar.html side=side %}
-            {% endif %}
-          </aside>
+        {% if page.link %}
+          <div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
         {% endif %}
 
-        {% comment %} {% if page.link %}
-          <div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
-        {% endif %} {% endcomment %}
-      </section>
-    </div>
-
-    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
-      {% comment %} {% include comments.html %} {% endcomment %}
-    {% endif %}
-  </article>
-
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    <div class="page__related">
-      <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      <div class="columns">
-        {% for post in site.related_posts limit:4 %}
-          {% include archive-single.html type="grid" grid_size=4 %}
-        {% endfor %}
-      </div>
-    </div>
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
-    <div class="page__related">
-      <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      <div class="grid__wrapper">
-        {% for post in site.posts limit:4 %}
-          {% if post.id == page.id %}
-            {% continue %}
+        <section class="page__meta mb-4">
+          {% if site.data.ui-text[site.locale].meta_label %}
+            <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
           {% endif %}
-          {% include archive-single.html type="grid" %}
-        {% endfor %}
+          {% include page__taxonomy.html %}
+          {% include page__date.html %}
+        </section>
+
+        {% if page.share %}{% include social-share.html %}{% endif %}
+
+        {% include post_pagination.html %}
       </div>
-    </div>
+
+      {% if page.toc or page.sidebar_second %}
+        <aside class="sidebar__right column {{ sidebar_second_size }} order-lg-2">
+          {% if page.toc %}
+            <nav class="toc {% if page.toc_sticky %}sidebar-sticky{% endif %}">
+              <header>
+                <h4 class="nav__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
+              </header>
+              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="scroll-to-link" %}
+            </nav>
+          {% endif %}
+          {% if page.sidebar_second %}
+            {%- assign side = 'second' -%}
+            {% include sidebar.html side=side %}
+          {% endif %}
+        </aside>
+      {% endif %}
+
+      <!-- TODO: Check here -->
+      {% comment %} {% if page.link %}
+        <div><a href="{{ page.link }}" class="btn btn-primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>
+      {% endif %} {% endcomment %}
+    </section>
+  </div>
+
+  {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
+    {% comment %} {% include comments.html %} {% endcomment %}
   {% endif %}
+</article>
 {% comment %} </div> {% endcomment %}
