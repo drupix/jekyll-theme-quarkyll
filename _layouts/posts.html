@@ -7,7 +7,7 @@ layout: archive
 <div class="taxonomy__index filters">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
   {% for year in postsInYear %}
-    <a href="#year-{{ year.name }}" class="chip chip-lg filter--item">
+    <a href="#year-{{ year.name }}" class="chip chip-lg scroll-to-link">
       {{ year.name }}
       <figure class="avatar avatar-right bg-dark" data-initial="{{ year.items | size }}"></figure>
     </a>

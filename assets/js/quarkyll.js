@@ -1,3 +1,14 @@
+
+function scrollToLink(el){
+    var header_offset = 45;
+    var toId = el.attr("href");
+    toId = toId.replace(/:/g, "\\:");
+    var toTop = $(toId).offset().top;
+    window.scroll({ top: toTop - header_offset, left: 0, behavior: 'smooth' });
+    return false;
+}
+
+
 jQuery(document).ready(function($){
 
     // Smooth scroll to top
@@ -6,33 +17,21 @@ jQuery(document).ready(function($){
         return false;
     });
 
-    // Smooth scroll to taxonomy__section
-    $('.taxonomy__index .filter--item').click(function(){
-        var header_offset = 45;
-        var toId = $(this).attr("href");
-        toId = toId.replace(/:/g, "\\:");
-        var toTop = $(toId).offset().top;
-        window.scroll({ top: toTop - header_offset, left: 0, behavior: 'smooth' });
+    // Smooth scroll to link
+    $('a.scroll-to-link').click(function(){
+        scrollToLink($(this));
         return false;
     });
 
     // Smooth scroll to footnotes
     $('.footnote').click(function(){
-        var header_offset = 45;
-        var toId = $(this).attr("href");
-        toId = toId.replace(/:/g, "\\:");
-        var toTop = $(toId).offset().top;
-        window.scroll({ top: toTop - header_offset, left: 0, behavior: 'smooth' });
+        scrollToLink($(this));
         return false;
     });
 
     // Smooth scroll to notes
     $('.reversefootnote').click(function(){
-        var header_offset = 45;
-        var toId = $(this).attr("href");
-        toId = toId.replace(/:/g, "\\:");
-        var toTop = $(toId).offset().top;
-        window.scroll({ top: toTop - header_offset, left: 0, behavior: 'smooth' });
+        scrollToLink($(this));
         return false;
     });
 

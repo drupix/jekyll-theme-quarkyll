@@ -15,7 +15,7 @@ layout: archive
   {% for i in (1..tags_max) reversed %}
     {% for tag in site.tags %}
       {% if tag[1].size == i %}
-        <a href="#{{ tag[0] | slugify }}" class="chip chip-lg filter--item">
+        <a href="#{{ tag[0] | slugify }}" class="chip chip-lg scroll-to-link">
           {{ tag[0] }}
           <figure class="avatar avatar-right bg-dark" data-initial="{{ i }}"></figure>
         </a>
