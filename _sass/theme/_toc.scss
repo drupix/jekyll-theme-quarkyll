@@ -1,0 +1,45 @@
+.toc {
+  &.menu {
+    box-shadow: none;
+    border: solid 1px $border-color;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px 8px 0 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      ul {
+        margin: 0 0.4rem;
+      }
+    }
+    .toc__title {
+      margin: 0;
+      padding: 0.4rem;
+      //background: $primary-color;
+      background: $body-font-color;
+      color: $light-color;
+      border-radius: 8px 8px 0 0;
+    }
+    .toc__menu {
+      a {
+        display: block;
+        font-weight: bold;
+        border-top: solid 1px $border-color;
+        padding: .4rem;
+        color: $body-font-color;
+      }
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        ul {
+          a {
+            font-weight: normal;
+            border-top: none;
+            padding-left: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

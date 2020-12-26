@@ -91,9 +91,9 @@ layout: default
       {% if page.toc or page.sidebar_second %}
         <aside class="sidebar__right column {{ sidebar_second_size }} order-lg-2">
           {% if page.toc %}
-            <nav class="toc {% if page.toc_sticky %}sidebar-sticky{% endif %}">
+            <nav class="toc menu {% if page.toc_sticky %}sidebar-sticky{% endif %}">
               <header>
-                <h4 class="nav__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
+                <h4 class="toc__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
               </header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="scroll-to-link" %}
             </nav>
