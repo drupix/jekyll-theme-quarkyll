@@ -65,14 +65,15 @@ repository               : "drupix/jekyll-theme-quarkyll"
 # Plugins (previously gems:)
 plugins:
   - jekyll-sitemap
+  - jekyll-gist
 #   - jekyll-menus
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-sitemap
+  - jekyll-gist
 #   - jekyll-menus
   # - jekyll-paginate
-  # - jekyll-gist
   # - jekyll-feed
   # - jemoji
   # - jekyll-include-cache

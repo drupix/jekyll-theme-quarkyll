@@ -23,8 +23,8 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "jekyll-theme-quarkyll"
-# remote_theme           : "drupix/jekyll-theme-quarkyll@0.1.0"
+# theme                    : "jekyll-theme-quarkyll"
+# remote_theme             : "drupix/jekyll-theme-quarkyll@0.1.0"
 
 # Theme options: (added as body class)
 theme_options: [
@@ -37,18 +37,17 @@ theme_options: [
 ]
 
 # Grid size: grid-sm, grid-md grid-lg grid-xl
-grid-size       : grid-xl
-header-grid-size: grid-xl
+grid-size                : grid-xl
+header-grid-size         : grid-xl
 
 # Site Settings
-# encoding        : "utf-8"
-locale          : "fr-CH"
-title           : "Quarkyll Theme"
-title_separator : "-"
-slogan          : "A simple Jekyll Theme"
-description     : "An amazing website."
-favicon         : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
-# Logo functionality:
+locale                   : "fr-CH"
+title                    : "Quarkyll Theme"
+title_separator          : "-"
+slogan                   : "A simple Jekyll Theme"
+description              : "An amazing website."
+favicon                  : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
+# Logo functionality
   # If logo_light is defined, logo will automatically switch between
   # logo and logo_light depending on theme_options[header-dark] and/or
   # theme_options[header-transparent] if defined.
@@ -56,29 +55,25 @@ favicon         : # path of favicon image to display in browser tab, e.g. "/asse
   #
   # Note that both logo and logo_light are otionals but if you want to display a logo
   # you must define the logo variable
-logo       : "/assets/images/logo-quarkyll-light.png"       # path of logo image to display in the header, e.g. "/assets/images/logo.png"
-logo_light : "/assets/images/logo-quarkyll-light.png" # path of alternate logo image to display in the header, e.g. "/assets/images/logo.png"
+logo                     : "/assets/images/logo-quarkyll-light.png" # path of logo image to display in the header, e.g. "/assets/images/logo.png"
+logo_light               : "/assets/images/logo-quarkyll-light.png" # path of alternate logo image to display in the header, e.g. "/assets/images/logo.png"
 
-# email: your-email@example.com
-# description: >- # this means to ignore newlines until "baseurl:"
-#   Write an awesome description for your new site here. You can edit this
-#   line in _config.yml. It will appear in your document head meta (for
-#   Google search results) and in your feed.xml site description.
-
-url         : # the base hostname & protocol for your site e.g. "https://drupix.github.io"
-baseurl     : # the subpath of your site, e.g. "/blog"
-repository  :
+url                      : # the base hostname & protocol for your site e.g. "https://drupix.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               :
 
 # Plugins (previously gems:)
-# plugins:
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
 #   - jekyll-menus
 
 # mimic GitHub Pages with --safe
-# whitelist:
+whitelist:
+  - jekyll-sitemap
+  - jekyll-gist
 #   - jekyll-menus
   # - jekyll-paginate
-  # - jekyll-sitemap
-  # - jekyll-gist
   # - jekyll-feed
   # - jemoji
   # - jekyll-include-cache
@@ -112,9 +107,42 @@ tag_archive:
 #     tag: /tags/:name/
 
 # SEO Related
-# google_site_verification :
-# bing_site_verification   :
-# yandex_site_verification :
+google_site_verification :
+bing_site_verification   :
+yandex_site_verification :
+alexa_site_verification  :
+naver_site_verification  :
+
+# Social Sharing
+twitter:
+  username               :
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 : # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links                  : # An array of links to social media profiles
+
+# Social media links - (by defaults they are displayed in the pre-footer)
+social_media:
+  links:
+    - title: "Say Hello"
+      icon: 'la la-envelope'
+      # url:
+    - title: "Facebook"
+      icon: 'lab la-facebook'
+      # url:
+    - title: "Twitter"
+      icon: 'lab la-twitter'
+      # url:
+    - title: "GitHub"
+      icon: 'lab la-github'
+      # url:
 
 # Analytics
 # analytics:
@@ -122,6 +150,33 @@ tag_archive:
 #   google:
 #     tracking_id          :
 #     anonymize_ip         : # true, false (default)
+
+# Site Author
+author:
+  name             : "Your Name"
+  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "I am an **amazing** person."
+  location         : "Somewhere"
+  twitter          : "@YourName"
+  links:
+    - label: "Email"
+      icon: "las la-envelope-square"
+      # url: "mailto:your.name@email.com"
+    - label: "Website"
+      icon: "las la-link"
+      # url: "https://your-website.com"
+    - label: "Twitter"
+      icon: "lab la-twitter-square"
+      # url: "https://twitter.com/"
+    - label: "Facebook"
+      icon: "lab la-facebook-square"
+      # url: "https://facebook.com/"
+    - label: "GitHub"
+      icon: "lab la-github"
+      # url: "https://github.com/"
+    - label: "Instagram"
+      icon: "lab la-instagram"
+      # url: "https://instagram.com/"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -153,6 +208,7 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - node_modules/
+  - Rakefile
   - README
   - vendor/bundle/
   - vendor/cache/
@@ -160,6 +216,11 @@ exclude:
   - vendor/ruby/
   - /docs # ignore Quarkyll /docs
   - /test # ignore Quarkyll /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
 markdown: kramdown
@@ -168,7 +229,7 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-
+# TODO: check here
 # Markdown Processing
 #   see https://jekyllrb.com/docs/configuration/markdown/#custom-markdown-processors
 #   and https://kramdown.gettalong.org/options.html
