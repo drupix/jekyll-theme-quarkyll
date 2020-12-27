@@ -4,16 +4,19 @@ layout: default
 
 {%- assign content_size = '' -%}
 {%- assign sidebar_first_size = 'col-12' -%}
-{%- assign sidebar_seconf_size = 'col-12' -%}
+{%- assign sidebar_second_size = 'col-12' -%}
+{%- assign sidebar_first_class = 'no-sidebar-second' -%}
 
 {%- if page.sidebar_first and page.sidebar_second -%}
   {%- assign content_size = 'column col-6 col-md-12' -%}
   {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
   {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+  {%- assign sidebar_first_class = 'sidebar-second' -%}
 {%- elsif page.sidebar_first and page.toc -%}
   {%- assign content_size = 'column col-6 col-md-12' -%}
   {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
   {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+  {%- assign sidebar_first_class = 'sidebar-second' -%}
 {%- elsif page.sidebar_first or page.author_profile or layout.author_profile -%}
   {%- assign content_size = 'column col-9 col-md-12' -%}
   {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
@@ -25,7 +28,7 @@ layout: default
 
 <section class="archive__content {% if page.author_profile or layout.author_profile or page.sidebar_first or page.sidebar_second %}columns{% endif %}" itemprop="text">
   {% if page.author_profile or layout.author_profile or page.sidebar_first %}
-    <aside class="sidebar__left column {{ sidebar_first_size }}">
+    <aside class="sidebar__left column {{ sidebar_first_size }} {{ sidebar_first_class }}">
       {%- assign side = false -%}
       {% if page.sidebar_first %}
         {%- assign side = 'first' -%}
