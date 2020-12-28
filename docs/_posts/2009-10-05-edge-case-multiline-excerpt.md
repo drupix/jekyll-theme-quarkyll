@@ -1,5 +1,9 @@
 ---
 title: "Edge Case: Post with multiline excerpt"
+categories:
+  - Edge Case
+tags:
+  - edge case
 ---
 
 Et ex ullamco duis don't

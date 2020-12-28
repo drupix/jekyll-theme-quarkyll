@@ -160,7 +160,7 @@ author:
       icon: "las la-link"
       url: "https://your-site.com"
     - label: "Twitter"
-      icon: "lab la-twitter-square"
+      icon: "lab la-twitter"
       url: "https://twitter.com/"
     - label: "GitHub"
       icon: "lab la-github"
