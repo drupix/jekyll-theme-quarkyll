@@ -9,7 +9,7 @@
 <head>
     {% include head.html %}
 </head>
-<body id="top" class="{{ page.classes | default: "" }} {% if page.showcase %}showcase{% endif %} {{ site.theme_options | join: " " }}">
+<body id="top" class="{{ page.classes | default: "" }} {% if page.showcase %}showcase{% else %}no-showcase{% endif %} {{ site.theme_options | join: " " }}">
   <div id="page-wrapper">
     {%- include header.html -%}
     {%- if page.showcase -%}
@@ -90,6 +90,7 @@
 
   <script src="{{ "/assets/js/quarkyll-bootstrap.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/plugins/jquery.treemenu.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/plugins/jquery.fancybox.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/quark.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/quarkyll.js" | relative_url }}"></script>
 </body>

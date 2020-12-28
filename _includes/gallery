@@ -1,7 +1,9 @@
 {% if include.id %}
   {% assign gallery = page[include.id] %}
+  {% assign data_fancybox_id = "gallery" | append: include.id %}
 {% else %}
   {% assign gallery = page.gallery %}
+  {% assign data_fancybox_id = "gallery" %}
 {% endif %}
 
 {% if include.layout %}
@@ -17,11 +19,13 @@
 {% endif %}
 
 {% comment %} <figure class="figure gallery {{ gallery_layout }} {{ include.class }}"> {% endcomment %}
-<figure class="figure gallery {{ gallery_layout }}">
+<figure class="figure gallery {{ gallery_layout }} {% if include.magnific %}magnific{% endif  %}">
   {% for img in gallery %}
     {% if img.url %}
       <a href="{{ img.url | relative_url }}"
-        {% if img.title %}title="{{ img.title }}"{% endif %}>
+        data-fancybox="{{ data_fancybox_id }}"
+        data-caption="{{ img.title }}"
+        {% if img.title %}title="{{ img.title | strip_html }}"{% endif %}>
           <img src="{{ img.image_path | relative_url }}"
             alt="{% if img.alt %}{{ img.alt }}{% endif %}">
       </a>

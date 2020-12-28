@@ -18,7 +18,8 @@ Gem::Specification.new do |spec|
   end
 
   # spec.add_runtime_dependency "jekyll", "~> 4.1"
-  spec.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
+  spec.add_runtime_dependency "jekyll", ">= 3.7", "<= 4.2"
+  spec.add_runtime_dependency "jekyll-gist", "~> 1.5"
   # spec.add_runtime_dependency "jekyll-menus", "~> 0.6"
 
   spec.add_development_dependency "bundler", '~> 2.1', '>= 2.1.4'

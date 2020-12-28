@@ -38,4 +38,21 @@ jQuery(document).ready(function($){
     // Add active class to parent menu item
     var pMenu = $('.main-menu .menu-item a.active').parent().parent().parent();
     pMenu.children('a').addClass('active');
+
+    $('[data-fancybox]').fancybox({
+        // What buttons should appear in the top right corner.
+        buttons: [
+            "zoom",
+            //"share",
+            "slideShow",
+            //"fullScreen",
+            //"download",
+            //"thumbs",
+            "close"
+        ],
+        // Open/close animation type
+        animationEffect: "zoom",
+        // Transition effect between slides
+        transitionEffect: "fade",
+    });
 });
