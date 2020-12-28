@@ -259,25 +259,25 @@ collections:
     icon: "las la-book"
     permalink: /:collection/:path/
     weight: 0
-  # recipes:
-  #   output: true
-  #   display_label: Recipes
-  #   icon: "las la-utensils"
-  #   permalink: /:collection/:path/
-  #   weight: 3
-  # pets:
-  #   output: true
-  #   display_label: Animals
-  #   icon: "las la-otter"
-  #   permalink: /:collection/:path/
-  #   weight: 2
-  # portfolio:
-  #   output: true
-  #   display_label: Portfolio
-  #   #icon: "las la-briefcase"
-  #   icon: "las la-code"
-  #   permalink: /:collection/:path/
-  #   weight: 1
+  recipes:
+    output: true
+    display_label: Recipes
+    icon: "las la-utensils"
+    permalink: /:collection/:path/
+    weight: 3
+  pets:
+    output: true
+    display_label: Animals
+    icon: "las la-otter"
+    permalink: /:collection/:path/
+    weight: 2
+  portfolio:
+    output: true
+    display_label: Portfolio
+    #icon: "las la-briefcase"
+    icon: "las la-code"
+    permalink: /:collection/:path/
+    weight: 1
 
 # Defaults
 defaults:
@@ -313,29 +313,38 @@ defaults:
       comments: false
       sidebar_first:
         nav: "docs"
-  # # _recipes
-  # - scope:
-  #     path: ""
-  #     type: recipes
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     share: true
-  #     comments: true
-  # # _pets
-  # - scope:
-  #     path: ""
-  #     type: pets
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     share: true
-  #     comment: true
-  # # _portfolio
-  # - scope:
-  #     path: ""
-  #     type: portfolio
-  #   values:
-  #     layout: single
-  #     author_profile: false
-  #     share: true
+  # _recipes
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      type: recipe
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: true
+      share: true
+      comments: true
+  # _pets
+  - scope:
+      path: ""
+      type: pets
+    values:
+      type: pet
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: true
+      share: true
+      comment: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      type: portfolio
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: false
+      share: true
+
+# Publish posts or collection documents with a future date
+future: true
