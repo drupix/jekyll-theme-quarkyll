@@ -9,7 +9,7 @@ showcase:
   ]
 sidebar_first:
   - title: "Role"
-    image: http://placehold.it/350x250
+    image: /images/500x300.png
     image_alt: "logo"
     text: "Designer, Front-End Developer"
   - title: "Responsibilities"
