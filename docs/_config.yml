@@ -255,17 +255,29 @@ compress_html:
 collections:
   docs:
     output: true
-    label: docs
+    display_label: Documentation
+    icon: "las la-book"
     permalink: /:collection/:path/
+    weight: 0
   # recipes:
   #   output: true
+  #   display_label: Recipes
+  #   icon: "las la-utensils"
   #   permalink: /:collection/:path/
+  #   weight: 3
   # pets:
   #   output: true
+  #   display_label: Animals
+  #   icon: "las la-otter"
   #   permalink: /:collection/:path/
+  #   weight: 2
   # portfolio:
   #   output: true
+  #   display_label: Portfolio
+  #   #icon: "las la-briefcase"
+  #   icon: "las la-code"
   #   permalink: /:collection/:path/
+  #   weight: 1
 
 # Defaults
 defaults:
