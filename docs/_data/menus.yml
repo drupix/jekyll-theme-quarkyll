@@ -6,3 +6,9 @@ header:
   - title: "About"
     url: /about/
     weight: 1
+  - title: "Sample Posts"
+    url: /year-archive/
+    weight: 2
+  - title: "Sample Collections"
+    url: /collection-archive/
+    weight: 3

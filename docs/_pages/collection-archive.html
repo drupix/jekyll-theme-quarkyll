@@ -1,0 +1,39 @@
+---
+title: "Posts by Collection"
+classes:  title-center title-h1h2
+layout: archive
+permalink: /collection-archive/
+author_profile: true
+---
+
+{% assign items_layout = 'grid' %}
+{% capture written_label %}'None'{% endcapture %}
+{% assign site_collections = site.collections | sort: "weight" %}
+
+{% for collection in site_collections %}
+  {% if collection.output == false or collection.label == "posts" %} {% continue %} {% endif%}
+
+  {% if collection.display_label %}
+    {% capture label %}{{ collection.display_label }}{% endcapture %}
+  {% else %}
+    {% capture label %}{{ collection.label }}{% endcapture %}
+  {% endif %}
+
+  {% if label != written_label %}
+    <h2 class="collection__label mb-0">{% if collection.icon %}<i class="{{collection.icon}}"></i> {% endif %}{{ label }} ({{ collection.docs.size }})</h2>
+    <!--{% if label != collection.label %}
+      <h4 class="text-gray mt-0">{{ collection.label }}</h4>
+    {% endif %}-->
+
+    {% capture written_label %}{{ label }}{% endcapture %}
+  {% endif %}
+
+  <div class="collection-{% if items_layout %}items_layout{% else %}list{% endif %} {% if items_layout == 'grid' and collection.docs.size > 0 %}columns{% endif %}">
+    {% for post in collection.docs %}
+      {% include archive-single.html type=items_layout %}
+    {% endfor %}
+  </div>
+
+{% endfor %}
+
+
