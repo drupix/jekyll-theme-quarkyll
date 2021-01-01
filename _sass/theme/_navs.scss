@@ -1,0 +1,15 @@
+// Navs
+.nav {
+  .nav__sub-title {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .nav-item {
+    &.active {
+      i {
+        padding-left: 0.6em;
+        //color: $primary-color;
+      }
+    }
+  }
+}

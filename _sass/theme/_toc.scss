@@ -2,7 +2,7 @@
   &.menu {
     box-shadow: none;
     border: solid 1px $border-color;
-    margin: 0;
+    margin: 0 0 0 1rem;
     padding: 0;
     border-radius: 8px 8px 0 0;
     ul {
@@ -40,6 +40,20 @@
           }
         }
       }
+    }
+  }
+}
+.col-md-12 {
+  .toc.menu {
+    @include breakpoint(md) {
+      margin: 0;
+    }
+  }
+}
+.col-lg-12 {
+  .toc.menu {
+    @include breakpoint(lg) {
+      margin: 0;
     }
   }
 }
