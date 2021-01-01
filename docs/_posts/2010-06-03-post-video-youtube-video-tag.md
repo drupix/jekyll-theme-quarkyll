@@ -5,12 +5,7 @@ categories:
 tags:
   - Post Formats
   - video
-  - TO CHECK
 ---
-
-{: .notices}
-Some video won't play, it has something to do with CORS...\
-Need some testing on Gihub Pages and live server
 
 ## Using `include` tag with custom `video` template
 

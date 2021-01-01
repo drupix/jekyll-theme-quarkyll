@@ -8,6 +8,13 @@ header:
     weight: 1
   - title: "Sample Posts"
     url: /year-archive/
+    children:
+      - title: "Posts by Year"
+        url: /year-archive/
+      - title: "Posts by Category"
+        url: /categories/
+      - title: "Posts by Tag"
+        url: /tags/
     weight: 2
   - title: "Sample Collections"
     url: /collection-archive/
