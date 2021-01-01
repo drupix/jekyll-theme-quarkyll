@@ -48,10 +48,11 @@
       {{ el | markdownify }}
     {%- endfor -%}
     {% if page.showcase.actions %}
-      {% comment %} <p> {% endcomment %}
+      <p>
       {% for action in page.showcase.actions %}
-        <a href="{{ action.url | relative_url }}" class="btn btn-primary  btn-lg">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
+        <a href="{{ action.url | relative_url }}" class="btn btn-primary btn-lg">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
       {% endfor %}
+      </p>
     {% endif %}
   </section>
   {%- if page.showcase.to_start != false -%}
