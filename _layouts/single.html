@@ -13,24 +13,24 @@ layout: default
 {%- assign sidebar_first_class = 'no-sidebar-second' -%}
 
 {%- if page.sidebar_first and page.sidebar_second -%}
-  {%- assign content_size = 'col-6 col-md-12' -%}
-  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
-  {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+  {%- assign content_size = 'col-6 col-md-12 order-md-3' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12 order-md-1' -%}
+  {%- assign sidebar_second_size = 'col-3 col-md-12 order-md-2' -%}
   {%- assign sidebar_first_class = 'sidebar-second' -%}
 {%- elsif page.sidebar_first and page.toc -%}
-  {%- assign content_size = 'col-6 col-md-12' -%}
-  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
-  {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+  {%- assign content_size = 'col-6 col-md-12 order-md-3' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12 order-md-1' -%}
+  {%- assign sidebar_second_size = 'col-3 col-md-12 order-md-2' -%}
   {%- assign sidebar_first_class = 'sidebar-second' -%}
 {%- elsif page.sidebar_second and page.author_profile or layout.author_profile -%}
-  {%- assign content_size = 'col-6 col-md-12' -%}
-  {%- assign sidebar_first_size = 'col-3 col-md-12' -%}
-  {%- assign sidebar_second_size = 'col-3 col-md-12' -%}
+  {%- assign content_size = 'col-6 col-md-12 order-md-3' -%}
+  {%- assign sidebar_first_size = 'col-3 col-md-12 order-md-1' -%}
+  {%- assign sidebar_second_size = 'col-3 col-md-12 order-md-2' -%}
   {%- assign sidebar_first_class = 'sidebar-second' -%}
 {%- elsif page.toc and page.author_profile or layout.author_profile -%}
-  {%- assign content_size = 'col-6 col-lg-12' -%}
-  {%- assign sidebar_first_size = 'col-3 col-lg-12' -%}
-  {%- assign sidebar_second_size = 'col-3 col-lg-12' -%}
+  {%- assign content_size = 'col-6 col-lg-12 order-lg-3' -%}
+  {%- assign sidebar_first_size = 'col-3 col-lg-12 order-lg-1' -%}
+  {%- assign sidebar_second_size = 'col-3 col-lg-12 order-lg-2' -%}
   {%- assign sidebar_first_class = 'sidebar-second' -%}
 {%- elsif page.sidebar_first or page.author_profile or layout.author_profile -%}
   {%- assign content_size = 'col-9 col-md-12' -%}
@@ -52,7 +52,7 @@ layout: default
   <div class="page__inner-wrap">
     <section class="page__content {% if page.toc or page.author_profile or layout.author_profile or page.sidebar_first or page.sidebar_second %}columns{% endif %}" itemprop="text">
       {% if page.author_profile or layout.author_profile or page.sidebar_first %}
-        <aside class="sidebar__left column {{ sidebar_first_size }} order-md-1 {{ sidebar_first_class }}">
+        <aside class="sidebar__left column {{ sidebar_first_size }} {{ sidebar_first_class }}">
           {%- assign side = false -%}
           {% if page.sidebar_first %}
             {%- assign side = 'first' -%}
@@ -64,7 +64,7 @@ layout: default
         </aside>
       {%- endif -%}
 
-      <div class="{{ content_size }} order-lg-3">
+      <div class="{{ content_size }}">
         {%- if  page.showcase.metas != true -%}
           {% include page__meta.html %}
         {%- endif -%}
@@ -89,11 +89,11 @@ layout: default
       </div>
 
       {% if page.toc or page.sidebar_second %}
-        <aside class="sidebar__right column {{ sidebar_second_size }} order-lg-2">
+        <aside class="sidebar__right column {{ sidebar_second_size }}">
           {% if page.toc %}
             <nav class="toc menu {% if page.toc_sticky %}sidebar-sticky{% endif %}">
               <header>
-                <h4 class="toc__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
+                <h5 class="toc__title"><i class="las la-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h5>
               </header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" anchor_class="scroll-to-link" %}
             </nav>
