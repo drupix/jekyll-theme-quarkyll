@@ -10,7 +10,7 @@
   {% endif %}
 {% endif %}
 
-<section class="page__related container-wide" {% if section_style %}style="{{ section_style }}"{% endif %}>
+<section id="related_content" class="page__related container-wide" {% if section_style %}style="{{ section_style }}"{% endif %}>
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="container {{ site.grid-size | default: 'grid-lg' }}">
