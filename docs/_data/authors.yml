@@ -1,0 +1,40 @@
+# Authors
+
+John Frusciante:
+  name        : "John Frusciante"
+  bio         : "How do you pronounce Frusciante?"
+  location    : "Los Angeles, CA"
+  avatar      : "/assets/images/bio-photo-jf.jpg"
+  twitter     : "@JohnFrusciante"
+  links:
+    - label: "Facebook"
+      icon: "lab la-facebook-f"
+      url: "https://www.facebook.com/Johnfrusciante"
+    - label: "Twitter"
+      icon: "lab la-twitter"
+      url: "https://twitter.com/johnfrusciante"
+    - label: "Tumblr"
+      icon: "lab la-tumblr"
+      url: "https://jfrusciantesite.tumblr.com/"
+    - label: "Soundcloud"
+      icon: "lab la-soundcloud"
+      url: "https://soundcloud.com/johnfrusciante-music"
+
+Jack White:
+  name        : "Jack White"
+  bio         : "What do you want, jewels? I am a very extravagant man."
+  avatar      : "/assets/images/bio-photo-jw.jpg"
+  twitter     : "@JackWhite"
+  links:
+    - label: "Email"
+      icon: "las la-envelope"
+      url: "mailto:jack@the-white-stripes.com"
+    - label: "Website"
+      icon: "las la-link"
+      url: "https://jackwhiteiii.com/"
+    - label: "Facebook"
+      icon: "lab la-facebook-f"
+      url: "https://facebook.com/jackwhite"
+    - label: "Twitter"
+      icon: "lab la-twitter"
+      url: "https://twitter.com/thirdmanrecords"
