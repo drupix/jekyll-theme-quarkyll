@@ -66,16 +66,14 @@ repository               :
 plugins:
   - jekyll-sitemap
   - jekyll-gist
-#   - jekyll-menus
+  # - jekyll-feed
+  # - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-sitemap
   - jekyll-gist
-#   - jekyll-menus
-  # - jekyll-paginate
   # - jekyll-feed
-  # - jemoji
   # - jekyll-include-cache
 
 # Archives
@@ -166,7 +164,7 @@ author:
       icon: "las la-link"
       # url: "https://your-website.com"
     - label: "Twitter"
-      icon: "lab la-twitter-square"
+      icon: "lab la-twitter"
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "lab la-facebook-square"

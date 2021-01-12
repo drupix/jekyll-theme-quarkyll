@@ -23,8 +23,8 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "jekyll-theme-quarkyll"
-remote_theme           : "drupix/jekyll-theme-quarkyll"
+# theme                    : "jekyll-theme-quarkyll"
+remote_theme             : "drupix/jekyll-theme-quarkyll"
 
 # Theme options: (added as body class)
 theme_options: [
@@ -66,16 +66,14 @@ repository               : "drupix/jekyll-theme-quarkyll"
 plugins:
   - jekyll-sitemap
   - jekyll-gist
-#   - jekyll-menus
+  # - jekyll-feed
+  # - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-sitemap
   - jekyll-gist
-#   - jekyll-menus
-  # - jekyll-paginate
   # - jekyll-feed
-  # - jemoji
   # - jekyll-include-cache
 
 # Archives
