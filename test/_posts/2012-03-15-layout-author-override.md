@@ -3,6 +3,11 @@ title: "Layout: Author Override"
 author: John Frusciante
 excerpt: "A post to test author overrides using a data file."
 last_modified_at: 2020-12-10T14:39:21-04:00
+categories:
+  - Layout
+tags:
+  - layout
+  - sidebar
 ---
 
 Sites that may have content authored from various individuals can be accommodated by using [data files](https://jekyllrb.com/docs/datafiles/).

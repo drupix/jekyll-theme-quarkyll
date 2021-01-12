@@ -1,18 +1,10 @@
 # [Jekyll Theme Quarkyll](https://drupix.github.io/jekyll-theme-quarkyll/)
 
-<!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE) -->
-<!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE) -->
-<!-- ![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square) -->
-<!-- [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/) -->
-<!-- [![Ruby gem](https://img.shields.io/gem/v/minimal-mistakes-jekyll.svg)](https://rubygems.org/gems/minimal-mistakes-jekyll) -->
-<!-- ![Gem](https://img.shields.io/gem/v/jekyll-theme-quarkyll?color=3085EE&style=flat-square) -->
-<!-- **Sould be installed with the theme** [![jekyll-menus](https://img.shields.io/static/v1?logo=jekyll&style=flat-square&label=jekyll-menu&message=v0.6.0&color=3085EE)](https://github.com/forestryio/jekyll-menus) -->
+[![GitHub](https://img.shields.io/github/license/drupix/spectre?style=flat-square&color=3085EE)](https://raw.githubusercontent.com/drupix/jekyll-theme-quarkyll/master/LICENSE.txt)
+[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%3D%204.2-blue.svg?style=flat-square&logo=jekyll&color=3085EE)](https://jekyllrb.com/)
+<!--[![Ruby gem](https://img.shields.io/badge/gem-v0.1.0-blue.svg?style=flat-square&logo=rubygems&color=3085EE)](https://rubygems.org/gems/jekyll-theme-quarkyll)-->
 
-![GitHub](https://img.shields.io/github/license/drupix/spectre?style=flat-square&color=3085EE)
-[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%204.1-blue.svg?style=flat-square&logo=jekyll&color=3085EE)](https://jekyllrb.com/)
-[![Ruby gem](https://img.shields.io/badge/gem-v0.1.0-blue.svg?style=flat-square&logo=rubygems&color=3085EE)](https://rubygems.org/gems/jekyll-theme-quarkyll)
-
-**To test with** [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%204.1-blue.svg?style=flat-square&logo=jekyll&color=red)](https://jekyllrb.com/)
+<!-- **To test with** [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%204.1-blue.svg?style=flat-square&logo=jekyll&color=red)](https://jekyllrb.com/) -->
 
 **:warning: WARNING: jekyll-theme-quarkyll is under developpment and not yet ready for production :beetle:**
 
@@ -97,6 +89,8 @@ To add a custom directory to your theme-gem, please edit the regexp in `jekyll-t
 - [jquery.treemenu.js](https://github.com/xevin/jquery.treemenu.js)
 - [Quark Theme](https://github.com/getgrav/grav-theme-quark)
 - [Spectre.css](https://picturepan2.github.io/spectre/)
+
+Special thanks to [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) where I learned a lot about Jekyll and Custom Themes.
 
 ---
 
