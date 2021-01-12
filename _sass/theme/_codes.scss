@@ -80,3 +80,8 @@ figure.highlight {
     }
   }
 }
+.language-plaintext {
+  &.highlighter-rouge {
+    font-weight: bold;
+  }
+}

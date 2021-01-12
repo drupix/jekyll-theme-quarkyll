@@ -26,14 +26,34 @@
 .page__share {
   padding-bottom: 2rem;
 }
-.page__related {
-  //background: lighten($dark-color, 10%);
-  //related_background: "#9e9e9e"
-  .page__related-title {
-    //color: $light-color;
-  }
 
-  //color: orangered;
+// #related_content {
+//   background: lighten($dark-color, 10%);
+//   .page__related-title {
+//     //color: $light-color;
+//   }
+//   //color: orangered;
+// }
+
+.archive__item {
+  position: relative;
+  a {
+    position: relative;
+    z-index: 10;
+  }
+  .archive__item-title {
+    a[rel="permalink"] {
+      position: static;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
 }
 
 .taxonomy__section {
