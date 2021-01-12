@@ -1,0 +1,384 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+# Theme Settings
+#
+# Review documentation to determine if you should use `theme` or `remote_theme`
+# https://drupix.github.io/jekyll-theme-quarkyll/docs/quick-start-guide/#installing-the-theme
+
+theme                    : "jekyll-theme-quarkyll"
+# remote_theme             : "drupix/jekyll-theme-quarkyll"
+
+# Theme options: (added as body class)
+theme_options: [
+  header-fixed,        # When enabled, the header will be fixed at the top of the browser
+  header-animated,     # When enabled, the header will animate to a smaller header when scrolling
+  header-dark,         # When enabled, a dark-friendly style will be used
+  #header-transparent,  # When enabled, a transparent style will be used
+  sticky-footer,       # When enabled, the footer will be sticky at the bottom of the browser
+  footer-dark,         # When enabled, a dark-friendly style will be used
+]
+
+# Grid size: grid-sm, grid-md grid-lg grid-xl
+grid-size                : grid-xl
+header-grid-size         : grid-xl
+
+# Other config
+locale                   : "fr-CH"
+title                    : Quarkyll Theme
+title_separator          : "-"
+slogan                   : "Development Test Site"
+description              : "Quarkyll theme test."
+favicon                  : # path of favicon image to display in browser tab, e.g. "/assets/images/favicon.ico"
+# Logo functionality
+  # If logo_light is defined, logo will automatically switch between
+  # logo and logo_light depending on theme_options[header-dark] and/or
+  # theme_options[header-transparent] if defined.
+  # This allow for example to automatically switch between the logo and her lighter version
+  #
+  # Note that both logo and logo_light are otionals but if you want to display a logo
+  # you must define the logo variable
+logo                     : "/assets/images/logo-quarkyll-light.png" # path of logo image to display in the header, e.g. "/assets/images/logo.png"
+logo_light               : "/assets/images/logo-quarkyll-light.png" # path of alternate logo image to display in the header, e.g. "/assets/images/logo.png"
+
+url                      : # the base hostname & protocol for your site e.g. "https://drupix.github.io"
+baseurl                  : "/test" # the subpath of your site, e.g. "/blog"
+repository               :
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+#   - jekyll-menus
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-sitemap
+  - jekyll-gist
+#   - jekyll-menus
+  # - jekyll-paginate
+  # - jekyll-feed
+  # - jemoji
+  # - jekyll-include-cache
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+yandex_site_verification :
+alexa_site_verification  :
+naver_site_verification  :
+
+# Social Sharing
+twitter:
+  username               : "drupix"
+facebook:
+  username               : "enzo-drupix"
+  app_id                 :
+  publisher              :
+og_image                 : "/assets/images/logo-quarkyll.png" # Open Graph/Twitter default site image
+# For specifying social profiles, used in _includes/seo.html
+# - https://developers.google.com/structured-data/customize/social-profiles
+# social:
+#   type                   : # Person or Organization (defaults to Person)
+#   name                   : # If the user or organization name differs from the site's name
+#   links                  : # An array of links to social media profiles
+#     - "https://twitter.com/drupix"
+#     - "https://www.facebook.com/enzo-drupix"
+
+# Social media links - (by defaults they are displayed in the pre-footer)
+social_media:
+  links:
+    - title: "Say Hello"
+      icon: 'la la-envelope'
+      url: "mailto:enzo@drupal-solutions.ch"
+    - title: "Facebook"
+      icon: 'lab la-facebook'
+      url: "https://www.facebook.com/your-facebook-username"
+    - title: "Twitter"
+      icon: 'lab la-twitter'
+      url: "https://www.twitter.com/your-twitter-name"
+    - title: "Drupal"
+      icon: 'lab la-drupal'
+      url: "https://www.drupal.org/u/drupix"
+    - title: "GitHub"
+      icon: 'lab la-github'
+      url: "https://github.com/drupix"
+
+# Analytics
+# analytics:
+#   provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+#   google:
+#     tracking_id          :
+#     anonymize_ip         : # true, false (default)
+
+# Site Author
+author:
+  name             : "Your Name"
+  avatar           : "/assets/images/bio-photo.jpg"
+  bio              : "I am an **amazing** person."
+  location         : "Somewhere on Earth"
+  twitter          : "@YourName"
+  links:
+    - label: "Your Website"
+      icon: "las la-link"
+      url: "https://your-site.com"
+    - label: "Twitter"
+      icon: "lab la-twitter"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "lab la-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "lab la-instagram"
+      url: "https://instagram.com/"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.vscode"
+  # - vendor
+  - .asset-cache
+  - .bundle
+  # - .jekyll-assets-cache
+  # - .jekyll-cache/
+  - .sass-cache/
+  # - assets/js/plugins
+  # - assets/js/vendor
+  # - assets/js/site.js
+  # - assets/js/quarkyll-bootstrap.js
+  - CHANGELOG
+  - config
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - node_modules/
+  - Rakefile
+  - README
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Build Command Options - https://jekyllrb.com/docs/configuration/options/#build-command-options
+# Cause a build to fail if there is a YAML syntax error in a page's front matter.
+# Usefull for testing
+strict_front_matter: true
+
+# Liquid - https://jekyllrb.com/docs/configuration/liquid/
+liquid:
+  error_mode: strict
+  # strict_variables: true
+  # strict_filters: true
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# TODO: check here
+# Markdown Processing
+#   see https://jekyllrb.com/docs/configuration/markdown/#custom-markdown-processors
+#   and https://kramdown.gettalong.org/options.html
+kramdown:
+  input: GFM
+  # auto_ids: false
+#   hard_wrap: false
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..6
+#   smart_quotes: lsquo,rsquo,ldquo,rdquo
+#   enable_coderay: false
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed #expanded # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Outputting
+permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Collections
+collections:
+  docs:
+    output: true
+    display_label: Documentation
+    icon: "las la-book"
+    permalink: /:collection/:path/
+    weight: 0
+  recipes:
+    output: true
+    display_label: Recipes
+    icon: "las la-utensils"
+    permalink: /:collection/:path/
+    weight: 3
+  pets:
+    output: true
+    display_label: Animals
+    icon: "las la-otter"
+    permalink: /:collection/:path/
+    weight: 2
+  portfolio:
+    output: true
+    display_label: Portfolio
+    #icon: "las la-briefcase"
+    icon: "las la-code"
+    permalink: /:collection/:path/
+    weight: 1
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+      author_profile: false
+  # _docs
+  - scope:
+      path: "_docs"
+      type: docs
+    values:
+      layout: single
+      classes: title-center title-h1h2
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar_first:
+        nav: "docs"
+        sticky: true
+      toc_sticky: true
+  # _recipes
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      type: recipe
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: true
+      share: true
+      comments: true
+  # _pets
+  - scope:
+      path: ""
+      type: pets
+    values:
+      type: pet
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: true
+      share: true
+      comment: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      type: portfolio
+      layout: single
+      classes: title-center title-h1h2
+      author_profile: false
+      share: true
+
+# Publish posts or collection documents with a future date
+future: true
+
+# webserver_headers:
+# # - - Access-Control-Allow-Origin
+# #   - "*"
+# # - - Access-Control-Allow-Methods
+# #   - GET, OPTIONS, HEAD
+#   "Access-Control-Allow-Origin": "*"
+#   "Server": "CustomServerName"
+
+# webrick:
+#   headers:
+#     Access-Control-Allow-Origin: "*"
+#     # Content-Security-Policy: default-src 'self' https://www.youtube-nocookie.com  https://googleads.g.doubleclick.net/ googleads.g.doubleclick.net; script-src 'self' https://www.youtube-nocookie.com https://googleads.g.doubleclick.net/ https://googleads.g.doubleclick.net/pagead/id;
+# # X-Content-Security-Policy" default-src 'self'; script-src 'self' https://fonts.googleapis.com https://ajax.googleapis.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' ; font-src 'self' https://fonts.googleapis.com; connect-src 'self' https://ajax.googleapis.com; media-src 'self' ; object-src 'self' ; child-src 'self' ; frame-ancestors 'self' ; form-action 'none' ; sandbox allow-same-origin allow-scripts allow-pointer-lock;" />

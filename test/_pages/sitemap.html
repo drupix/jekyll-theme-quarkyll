@@ -1,0 +1,66 @@
+---
+title: "Sitemap"
+classes: title-center title-h1h2
+layout: archive
+permalink: /sitemap/
+author_profile: false
+---
+
+{% capture xml_sitemap_file_link %}
+[XML version]({{ "sitemap.xml" | relative_url }})
+{% endcapture %}
+
+{% capture xml_sitemap_link %}
+{{ xml_sitemap_file_link | markdownify | remove: "<p>" | remove: "</p>" }}
+{% endcapture %}
+
+A list of all the posts and pages found on the site. For you robots out there is an {{ xml_sitemap_link }} available for digesting as well.
+
+{% assign items_layout = 'list' %}
+
+<h2>Pages</h2>
+<div class="collection-{% if items_layout %}items_layout{% else %}list{% endif %} {% if items_layout == 'grid' and site.pages.size > 0 %}columns{% endif %}">
+  {% for post in site.pages %}
+    {% if post.name == 'robots.txt' %} {% continue %} {% endif %}
+    {% if post.name == 'sitemap.xml' %} {% continue %} {% endif %}
+    {% if post.name == 'main.scss' %} {% continue %} {% endif %}
+
+    {% include archive-single.html type=items_layout classes="pb-big" card=false %}
+  {% endfor %}
+  {% include back-to-top.html %}
+</div>
+
+<h2>Posts</h2>
+<div class="collection-{% if items_layout %}items_layout{% else %}list{% endif %} {% if items_layout == 'grid' and site.pages.size > 0 %}columns{% endif %}">
+  {% for post in site.posts %}
+    {% include archive-single.html type=items_layout classes="pb-big" %}
+  {% endfor %}
+  {% include back-to-top.html %}
+</div>
+
+{% capture written_label %}'None'{% endcapture %}
+{% assign site_collections = site.collections | sort: "weight" %}
+
+{% for collection in site_collections %}
+  {% if collection.output == false or collection.label == "posts" %} {% continue %} {% endif%}
+
+  {% if collection.display_label %}
+    {% capture label %}{{ collection.display_label }}{% endcapture %}
+  {% else %}
+    {% capture label %}{{ collection.label }}{% endcapture %}
+  {% endif %}
+
+  {% if label != written_label %}
+    <h2 class="collection__label mb-0">{% if collection.icon %}<i class="{{collection.icon}}"></i> {% endif %}{{ label }}</h2>
+    {% if label != collection.label %}
+      <h4 class="text-gray mt-0">{{ collection.label }}</h4>
+    {% endif %}
+
+    {% capture written_label %}{{ label }}{% endcapture %}
+  {% endif %}
+
+  {% for post in collection.docs %}
+    {% include archive-single.html type=items_layout classes="pb-big" %}
+  {% endfor %}
+  {% include back-to-top.html %}
+{% endfor %}

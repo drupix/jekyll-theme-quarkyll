@@ -1,0 +1,14 @@
+simple:
+  title: 'Simple'
+  description: 'No more databases, comment moderation, or pesky updates to install — just your content.'
+  icon: 'la la-fighter-jet'
+static:
+  title: 'Static'
+  description: '<a href="https://daringfireball.net/projects/markdown/" rel="noreferrer" target="_blank">Markdown</a>,
+                <a href="https://github.com/Shopify/liquid/wiki" rel="noreferrer" target="_blank">Liquid</a>,
+                HTML & CSS go in. Static sites come out ready for deployment.'
+  icon: 'la la-database'
+blogaware:
+  title: 'Blog-aware'
+  description: 'Permalinks, categories, pages, posts, and custom layouts are all first-class citizens here.'
+  icon: 'la la-cubes'
