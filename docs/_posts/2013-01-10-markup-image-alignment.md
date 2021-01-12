@@ -19,8 +19,8 @@ Welcome to image alignment! The best way to demonstrate the ebb and flow of the 
 The image above happens to be **centered**.
 
 ```markdown
-![image-center]({{ site.url }}{{ site.baseurl }}/images/image-alignment-580x300.jpg)
-{: .text-center}
+{% raw %}![image-center]({{ site.url }}{{ site.baseurl }}/images/image-alignment-580x300.jpg)
+{: .text-center}{% endraw %}
 ```
 
 ## Left alignement
@@ -30,7 +30,8 @@ The image above happens to be **centered**.
 As you can see the should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we'll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it's thing. Mission accomplished!
 
 ```markdown
-![image-left]({{ site.url }}{{ site.baseurl }}/images/image-alignment-150x150.jpg){: .float-left}
+{% raw %}![image-left]({{ site.url }}{{ site.baseurl }}/images/image-alignment-150x150.jpg)
+{: .float-left}{% endraw %}
 ```
 
 ## Massively large image
@@ -42,7 +43,7 @@ And now for a **massively large image**. It also has **no alignment**.
 The image above, though 1200px wide, should not overflow the content area. It should remain contained with no visible disruption to the flow of content.
 
 ```markdown
-![no-alignment]({{ site.url }}{{ site.baseurl }}/images/image-alignment-1200x400.jpg)
+{% raw %}![no-alignment]({{ site.url }}{{ site.baseurl }}/images/image-alignment-1200x400.jpg){% endraw %}
 ```
 
 ## Right alignement
@@ -54,7 +55,8 @@ And now we're going to shift things to the **right align**. Again, there should 
 In just a bit here, you should see the text start to wrap below the right aligned image and settle in nicely. There should still be plenty of room and everything should be sitting pretty. Yeah --- Just like that. It never felt so good to be right.
 
 ```markdown
-![image-right]({{ site.url }}{{ site.baseurl }}/images/image-alignment-300x200.jpg){: .float-right}
+{% raw %}![image-right]({{ site.url }}{{ site.baseurl }}/images/image-alignment-300x200.jpg)
+{: .float-right}{% endraw %}
 ```
 
 ## With caption
