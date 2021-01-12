@@ -1,6 +1,6 @@
-{% assign document = post | default: page %}
-{% if document.read_time or document.show_date %}
-  <p class="page__meta {{ include.type | default: 'list' }} text-gray">
+{%- assign document = post | default: page -%}
+{%- if document.read_time or document.show_date -%}
+  <p class="page__meta {{ include.type | default: 'list' }} {% if document.showcase.metas != true %}text-gray{% endif %}">
     {% if document.show_date and document.date %}
       {% assign date = document.date %}
       <span class="page__meta--item page__meta-date">
@@ -27,4 +27,4 @@
       </span>
     {% endif %}
   </p>
-{% endif %}
+{%- endif -%}

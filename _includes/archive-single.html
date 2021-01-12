@@ -34,7 +34,6 @@
       </div>
     {% endif %}
     <div class="card-header">
-      {% comment %} <h3 class="archive__item-title card-title no_toc" itemprop="headline"> {% endcomment %}
       <div class="archive__item-title card-title h3 no_toc" itemprop="headline">
         {% if post.link %}
           <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="las la-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -42,10 +41,13 @@
           <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
         {% endif %}
       </div>
-      {% comment %} </h3> {% endcomment %}
-      <div class="card-subtitle">
+      {% capture captured_page_meta %}
         {% include page__meta.html type=include.type %}
-      </div>
+      {% endcapture %}
+      {% capture page_meta %}{{ captured_page_meta | strip }}{% endcapture %}
+      {% if page_meta != "" %}
+        <div class="card-subtitle">{{ page_meta | strip }}</div>
+      {% endif %}
     </div>
     {% if post.excerpt %}<p class="archive__item-excerpt card-body" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
