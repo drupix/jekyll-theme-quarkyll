@@ -224,7 +224,7 @@ incremental: false
 #   and https://kramdown.gettalong.org/options.html
 kramdown:
   input: GFM
-  auto_ids: false
+  # auto_ids: false
 #   hard_wrap: false
 #   footnote_nr: 1
 #   entity_output: as_char
@@ -313,6 +313,7 @@ defaults:
       comments: false
       sidebar_first:
         nav: "docs"
+        sticky: true
   # _recipes
   - scope:
       path: "_recipes"
