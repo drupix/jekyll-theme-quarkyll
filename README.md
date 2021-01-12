@@ -1,10 +1,8 @@
 # [Jekyll Theme Quarkyll](https://drupix.github.io/jekyll-theme-quarkyll/)
 
-[![GitHub](https://img.shields.io/github/license/drupix/spectre?style=flat-square&color=3085EE)](https://raw.githubusercontent.com/drupix/jekyll-theme-quarkyll/master/LICENSE.txt)
+[![LICENSE](https://img.shields.io/github/license/drupix/spectre?style=flat-square&color=3085EE)](https://raw.githubusercontent.com/drupix/jekyll-theme-quarkyll/master/LICENSE.txt)
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%3D%204.2-blue.svg?style=flat-square&logo=jekyll&color=3085EE)](https://jekyllrb.com/)
 <!--[![Ruby gem](https://img.shields.io/badge/gem-v0.1.0-blue.svg?style=flat-square&logo=rubygems&color=3085EE)](https://rubygems.org/gems/jekyll-theme-quarkyll)-->
-
-<!-- **To test with** [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7%20and%20%3C%204.1-blue.svg?style=flat-square&logo=jekyll&color=red)](https://jekyllrb.com/) -->
 
 **:warning: WARNING: jekyll-theme-quarkyll is under developpment and not yet ready for production :beetle:**
 
