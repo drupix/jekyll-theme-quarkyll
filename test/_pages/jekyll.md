@@ -119,3 +119,9 @@ The personal site of Michael Rose (the guy from Minimal Mistake theme)
 [http://blog.grayghostvisuals.com](http://blog.grayghostvisuals.com/workflow/deploying-jekyll-with-rake/) - Deploying a Jekyll site with a Rakefile
 
 [Sticker Mule](https://www.stickermule.com/fr) - Custom stickers that kick ass
+
+[jekyll-embed-video](https://github.com/nathancy/jekyll-embed-video) - Tips for video by nathancy (Nathan Lam)
+
+[Jekyll-Bootstrap](http://jekyllbootstrap.com/) - The Quickest Way to Blog on GitHub Pages
+
+[Investigating Jekyll for versioned content](https://justwriteclick.com/2017/07/30/investigating-jekyll-for-versioned-content/) - by Just Write Click blog

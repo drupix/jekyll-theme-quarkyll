@@ -11,11 +11,16 @@ toc_sticky: true
 
 ---
 
-* Update the CHANGELOG.md file
-  * Add **Bug Fixes** and **Enhancements** for the new version
-  * Update the **Unreleased** section
-* If necessary update the README.md file
-* If necessary update the LICENSE.txt
+* Update **theme version**:
+  * at top of `_layout/default.html` and `docs/_layout/default.html` files
+  * in `showcase.showcase_items` markdown of `test/index.md` files
+  * in `_includes/footer.html` file
+  * in `README.md` file
+    * **if necessary update other stuff in this file**
+* Update the **CHANGELOG.md** file
+  * add **Bug Fixes** and **Enhancements** for the new version
+  * update the **Unreleased** section
+* If necessary update the **LICENSE.txt**
 
 ### Step 2 - Update git
 
@@ -28,6 +33,8 @@ toc_sticky: true
 ### Step 3 - Update gem
 
 ---
+
+* Update version in jekyll-theme-quark.gemspec file
 
 #### On RubyGems.org
 

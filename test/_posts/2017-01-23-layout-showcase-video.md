@@ -15,6 +15,7 @@ categories:
 tags:
   - video
   - layout
+  - TO CHECK
 ---
 
 This post should display a **header with a responsive video**, if the theme supports it.

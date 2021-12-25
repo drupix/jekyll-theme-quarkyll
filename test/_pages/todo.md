@@ -13,28 +13,43 @@ toc_sticky: true
 
 ---
 
-* ~~Test [SSL with localhost with Jekyll](https://remotesynthesis.com/blog/running-ssl-localhost#ssl-with-localhost-with-jekyll)~~
-* ~~Fix `notices` in `_sass/theme/_typography.scss` when the first line contains a title tag like `h1`, `h2`, `h3`, etc.~~
-  * ~~Check also with other tags/class who can have margin/padding top~~
-* ~~Replace everywhere **Header Image** with **Showcase** -> `showcase:image`~~
-  * ~~see an example in [Layout: Showcase Image (External URL)]({% post_url 2012-03-15-layout-showcase-image-external %})~~
-* ~~Fix colors if transparent header is set and there is no showcase image~~
+* Remove duplicate project `quarkyll` from [github](https://github.com/drupix/quarkyll)
 * Try to add colors options
   * Add a color switcher
 * Check css naming convention:
   * [freeCodeCamp.org](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/) - CSS Naming Conventions that Will Save You Hours of Debugging
   * [Get BEM](http://getbem.com) -  Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development
 * Improve *Icon Tweaks* colors in `_typography.scss`
+* Make a graph/map with all `_layouts` and `_includes` to have a global vision of the structure
+* Check all code containing `site.data.ui-text`
+* Check if remove `_sass/theme/_filters.scss`, no more used as spectre filters are not used
+* ~~Test [SSL with localhost with Jekyll](https://remotesynthesis.com/blog/running-ssl-localhost#ssl-with-localhost-with-jekyll)~~
+* ~~Fix `notices` in `_sass/theme/_typography.scss` when the first line contains a title tag like `h1`, `h2`, `h3`, etc.~~
+  * ~~Check also with other tags/class who can have margin/padding top~~
+* ~~Replace everywhere **Header Image** with **Showcase** -> `showcase:image`~~
+  * ~~see an example in [Layout: Showcase Image (External URL)]({% post_url 2012-03-15-layout-showcase-image-external %})~~
+* ~~Fix colors if transparent header is set and there is no showcase image~~
 * ~~Improve `blockquote` with a plugin ??? (see [Post: Quote]({% post_url 2010-02-05-post-quote %}))~~
 * ~~Improve `img` by adding `photo-credit` (see [Post: Image (with Link)]({% post_url 2010-08-05-post-image-linked %}))~~
 * ~~Replace all images on site/test site with custom ones~~
-* Add more test with both sidebars, see in [Layout: Sidebar Custom]({% post_url 2012-04-16-layout-sidebar-custom %})
-* Make a graph/map with all `_layouts` and `_includes` to have a global vision of the structure
+* ~~Add more test with both sidebars, see in [Layout: Sidebar Custom]({% post_url 2012-04-16-layout-sidebar-custom %})~~
 * ~~Improve [Stylesheets for syntax highlighting](https://jekyllrb.com/docs/liquid/tags/#stylesheets-for-syntax-highlighting)~~
 * ~~Replace html tag `<br />` with a backslash (`\`) at the end of a line to create a line break~~
-* Check all code containing `site.data.ui-text`
 * ~~Add a lightbox for images~~
-* Check if remove `_sass/theme/_filters.scss`, no more used as spectre filters are not used
+
+### Theme scss
+
+---
+
+* Replace all html element with the class `.alert` with appropriate `.notices`
+* Remove alert class (and file ?) in `_sasss/theme/_alert.scss`
+* Check for `.alert` in `_help_pages/elements.html`
+
+### Include Cache
+
+---
+
+* Replace appropriate `include filename.html` with `include_cached filename.html`, see [Jekyll Include Cache](https://github.com/benbalter/jekyll-include-cache)
 
 ### Layouts
 
