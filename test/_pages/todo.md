@@ -18,7 +18,7 @@ toc_sticky: true
   * Add a color switcher
 * Check css naming convention:
   * [freeCodeCamp.org](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/) - CSS Naming Conventions that Will Save You Hours of Debugging
-  * [Get BEM](http://getbem.com) -  Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development
+  * [Get BEM](http://getbem.com) - Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development
 * Improve *Icon Tweaks* colors in `_typography.scss`
 * Make a graph/map with all `_layouts` and `_includes` to have a global vision of the structure
 * Check all code containing `site.data.ui-text`

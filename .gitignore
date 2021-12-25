@@ -1,8 +1,10 @@
 *.gem
 .bundle
 .jekyll-cache
+.jekyll-metadata
 .sass-cache
 _site
+vendor
 Gemfile.lock
 
 # IDE - VSCode
@@ -13,3 +15,6 @@ Gemfile.lock
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+# local dev - ssl
+test/ssl

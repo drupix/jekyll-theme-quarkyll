@@ -31,36 +31,66 @@ img {
 
 // Notices
 .notices {
-  //padding: 1px 1px 1px 30px;
   padding: 1px 30px;
-  //margin: 1.5rem 0;
-  border-left: 10px solid darkgrey;
-  background: lightgrey;
-  color: grey;
+  border-left: 10px solid $gray-color;
+  background: $gray-color-light;
+
+  a {
+    text-decoration: underline;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      color: $link-color-dark;
+    }
+  }
 
   &.info {
     border-left: 10px solid #5bc0de;
-    background: #f4f8fa;
-    color: #28a1c5;
+    background: lighten(#5bc0de, 30%);
   }
 
   &.warning {
-    border-left: 10px solid #f0ad4e;
-    background: #fcf8f2;
-    color: #df8a13;
+    border-left: 10px solid $warning-color;
+    background: lighten($warning-color, 40%);
+    a {
+      color: darken($warning-color, 10%);
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        color: darken($warning-color, 20%);
+      }
+    }
   }
 
   &.error,
   &.danger {
-    border-left: 10px solid #d9534f;
-    background: #fdf7f7;
-    color: #b52b27;
+    border-left: 10px solid $error-color;
+    background: lighten($error-color, 45%);
+    a {
+      color: $error-color;
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        color: darken($error-color, 10%);
+      }
+    }
   }
 
   &.success {
-    border-left: 10px solid #5cb85c;
-    background: #f1f9f1;
-    color: #3d8b3d;
+    border-left: 10px solid $success-color;
+    background: lighten($success-color, 45%);
+    a {
+      color: darken($success-color, 10%);
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        color: darken($success-color, 20%);
+      }
+    }
   }
 
   & > h1, & > h2,
@@ -106,12 +136,6 @@ p.notices {
     }
   }
 }
-
-/**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-
 
 // Icon Tweaks
 i.la,
